@@ -1,0 +1,19 @@
+.navbar-brand img {
+    height: 45px;
+}
+.login-heading {
+    text-align: center;
+    font-weight: 900;
+    border-bottom: 1px solid;
+}
+.table thead th, .table tfoot th {
+    font-size: 14px;
+    color: #777;
+}
+.btn i {
+    color: #fff;
+}
+#leadDetailModalBody img {
+    margin: auto;
+    width: 300px;
+}
