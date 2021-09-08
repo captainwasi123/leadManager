@@ -73,14 +73,12 @@
                         <table id="datatable" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th></th>
                                     <th>Full Name</th>
                                     <th>Designation</th>
-                                    <th>Company</th>
                                     <th>City</th>
                                     <th>Country</th>
-                                    <th>Phone No</th>
-                                    <th>Email Address</th>
+                                    <th>Mobile No</th>
+                                    <th>Category</th>
                                     <th>Source</th>
                                     <th>Created at</th>
                                     <th>User</th>
@@ -89,14 +87,12 @@
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <th></th>
                                     <th>Full Name</th>
                                     <th>Designation</th>
-                                    <th>Company</th>
                                     <th>City</th>
                                     <th>Country</th>
-                                    <th>Phone No</th>
-                                    <th>Email Address</th>
+                                    <th>Mobile No</th>
+                                    <th>Category</th>
                                     <th>Source</th>
                                     <th>Created at</th>
                                     <th>User</th>
@@ -106,16 +102,12 @@
                             <tbody>
                                 @foreach($leads as $val)
                                     <tr>
-                                        <td class="checkbox-box">
-                                            <form><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></form>
-                                        </td>
                                         <td>{{$val->name}}</td>
                                         <td>{{$val->designation}}</td>
-                                        <td>{{$val->company}}</td>
                                         <td>{{$val->city}}</td>
                                         <td>{{$val->country}}</td>
                                         <td>{{$val->mobile}}</td>
-                                        <td>{{$val->email}}</td>
+                                        <td>{{@$val->category->name}}</td>
                                         <td>{{@$val->source->source}}</td>
                                         <td>{{date('d-M-Y h:i a', strtotime($val->created_at))}}</td>
                                         <td>{{@$val->user->name}}</td>

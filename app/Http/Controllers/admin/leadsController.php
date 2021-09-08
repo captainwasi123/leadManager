@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\leads\source;
 use App\Models\leads\remarks;
 use App\Models\leads\leads;
+use App\Models\leads\categories;
 
 class leadsController extends Controller
 {
@@ -19,7 +20,7 @@ class leadsController extends Controller
 
     function add(){
         $data['source'] = source::all();
-        $data['total_leads'] = leads::count();
+        $data['categories'] = categories::orderBy('name')->get();
 
         return view('admin.leads.add')->with($data);
     }

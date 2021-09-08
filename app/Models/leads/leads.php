@@ -5,6 +5,7 @@ namespace App\Models\leads;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\leads\source;
+use App\Models\leads\categories;
 use App\Models\User;
 use Auth;
 
@@ -26,6 +27,7 @@ class leads extends Model
         $l->country = $data['country'];
         $l->profile_url = $data['profile_url'];
         $l->website_url = $data['website_url'];
+        $l->category_id = $data['category_id'];
         $l->source_id = $data['source'];
         $l->description = $data['description'];
         $l->status = '1';
@@ -38,6 +40,9 @@ class leads extends Model
 
     public function source(){
         return $this->belongsTo(source::class, 'source_id');
+    }
+    public function category(){
+        return $this->belongsTo(categories::class, 'category_id');
     }
     public function user(){
         return $this->belongsTo(User::class, 'created_by');

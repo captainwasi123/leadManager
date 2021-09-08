@@ -4,68 +4,6 @@
 
 <div class="container-fluid">
     <div class="row">
-        <!-- Column -->
-         <div class="col-lg-4 col-md-6">
-            <div class="card card-main">
-                <div class="card-body main-panel">
-                    <!-- Row -->
-
-                    <div class="row">
-                        <div class="col-3 p-l-0 p-r-0" align="center">
-                            <img src="{{URL::to('/public/assets/')}}/images/icon.png" width="70px">
-                        </div>
-                        <div class="col-9">
-                            <div class="sec-1">
-                                <h6>Total Leads</h6>
-                                <h2>{{$total_leads}}</h2> 
-                            </div>
-                                                                   
-                        </div>                                    
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-            <div class="card card-main">
-                <div class="card-body main-panel">
-                    <!-- Row -->
-                    <div class="row">
-                        <div class="col-3 p-l-0 p-r-0" align="center">
-                            <img src="{{URL::to('/public/assets/')}}/images/icon.png" width="70px">
-                        </div>
-                        <div class="col-9">
-                            <div class="sec-1">
-                                <h6>Total Converted Leads</h6>
-                                <h2>0</h2> 
-                            </div>
-                                                                   
-                        </div>                                    
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-            <div class="card card-main">
-                <div class="card-body main-panel">
-                    <!-- Row -->
-                    <div class="row">
-                        <div class="col-3 p-l-0 p-r-0" align="center">
-                            <img src="{{URL::to('/public/assets/')}}/images/icon.png" width="70px">
-                        </div>
-                        <div class="col-9">
-                            <div class="sec-1">
-                                <h6>Total Pending Leeds</h6>
-                                <h2>0</h2> 
-                            </div>
-                                                                   
-                        </div>                                    
-                    </div>
-                </div>
-            </div>
-        </div>             
-    </div>
- 
-    <div class="row">
         <div class="col-lg-12 col-md-12">
             <div class="card">
                 <div class="card-body">
@@ -83,74 +21,84 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group row">
-                                        <label class="control-label col-md-12">Full Name *</label>
                                         <div class="col-md-12">                                                        
-                                            <input type="text" class="form-control" name="fullname" required>
+                                            <input type="text" class="form-control" name="fullname" placeholder="Full Name *" required>
                                         </div>
                                     </div>                                                
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group row">
-                                        <label class="control-label col-md-12">Email *</label>
                                         <div class="col-md-12">                                                        
-                                            <input type="email" class="form-control" name="email" required>
+                                            <input type="number" class="form-control" name="mobile" placeholder="Mobile No *" required>
                                         </div>
                                     </div>                                                
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group row">
-                                        <label class="control-label col-md-12">Company Name</label>
                                         <div class="col-md-12">                                                        
-                                            <input type="text" class="form-control" name="company">
+                                            <input type="number" class="form-control" name="phone" placeholder="Phone No">
                                         </div>
                                     </div>                                                
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group row">
-                                        <label class="control-label col-md-12">Business Email</label>
                                         <div class="col-md-12">                                                        
-                                            <input type="email" class="form-control" name="business_email">
+                                            <input type="text" class="form-control" name="company" placeholder="Company Name">
                                         </div>
                                     </div>                                                
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group row">
-                                        <label class="control-label col-md-12">Designation</label>
                                         <div class="col-md-12">                                                        
-                                            <input type="text" class="form-control" name="designation">
+                                            <input type="text" class="form-control" name="designation" placeholder="Designation">
+                                        </div>
+                                    </div>                                                
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group row">
+                                        <div class="col-md-12">                                                        
+                                            <input type="email" class="form-control" name="email" placeholder="Email *" required>
+                                        </div>
+                                    </div>                                                
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group row">
+                                        <div class="col-md-12">                                                        
+                                            <input type="email" class="form-control" name="business_email" placeholder="Business Email">
                                         </div>
                                     </div>                                                
                                 </div> 
                                 <div class="col-md-3">
                                     <div class="form-group row">
-                                        <label class="control-label col-md-12">City *</label>
                                         <div class="col-md-12">
-                                            <input type="text" class="form-control" name="city" required>
-                                        </div>
-                                    </div>                                                
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group row">
-                                        <label class="control-label col-md-12">Country *</label>
-                                        <div class="col-md-12">
-                                            <input type="text" class="form-control" name="country" required>
-                                        </div>
-                                    </div>                                                
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group row">
-                                        <label class="control-label col-md-12">Mobile No *</label>
-                                        <div class="col-md-12">                                                        
-                                            <input type="number" class="form-control" name="mobile" required>
+                                            <input type="text" class="form-control" name="country" placeholder="Country *" required>
                                         </div>
                                     </div>                                                
                                 </div> 
                                 <div class="col-md-3">
                                     <div class="form-group row">
-                                        <label class="control-label col-md-12">Source *</label>
+                                        <div class="col-md-12">
+                                            <input type="text" class="form-control" name="city" placeholder="City *" required>
+                                        </div>
+                                    </div>                                                
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <select class="form-control custom-select" name="category_id" required>
+                                                <option value="">Category *</option>
+                                                @foreach($categories as $val)
+                                                    <option value="{{$val->id}}">{{$val->name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>                                                
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group row">
                                         <div class="col-md-12">
                                             <select class="form-control custom-select" name="source" required>
-                                                <option value="">Select</option>
+                                                <option value="">Source *</option>
                                                 @foreach($source as $val)
                                                     <option value="{{$val->id}}">{{$val->source}}</option>
                                                 @endforeach
@@ -160,33 +108,22 @@
                                 </div>
                                  <div class="col-md-6">
                                     <div class="form-group row">
-                                        <label class="control-label col-md-12">Profile Url</label>
                                         <div class="col-md-12">                                                        
-                                            <input type="text" class="form-control" name="profile_url">
+                                            <input type="text" class="form-control" name="profile_url" placeholder="Profile Url">
                                         </div>
                                     </div>                                                
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group row">
-                                        <label class="control-label col-md-12">Website Urls</label>
                                         <div class="col-md-12">                                                        
-                                            <input type="text" class="form-control" name="website_url">
-                                        </div>
-                                    </div>                                                
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group row">
-                                        <label class="control-label col-md-12">Phone No</label>
-                                        <div class="col-md-12">                                                        
-                                            <input type="number" class="form-control" name="phone">
+                                            <input type="text" class="form-control" name="website_url" placeholder="Website Urls">
                                         </div>
                                     </div>                                                
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group row">
-                                        <label class="control-label col-md-12">Description</label>
                                         <div class="col-md-12">
-                                            <textarea class="form-control custom-select" name="description" rows="4"></textarea> 
+                                            <textarea class="form-control custom-select" name="description" placeholder="Description" rows="4"></textarea> 
                                         </div>
                                     </div>                                                
                                 </div>                                                                                      
