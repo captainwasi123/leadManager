@@ -1,4 +1,4 @@
-<aside class="left-sidebar">
+   <aside class="left-sidebar">
     <div class="scroll-sidebar">
         <nav class="sidebar-nav">
             <ul>
@@ -8,6 +8,7 @@
                 <li> <a href="#">Marked Leads</a> </li>
                 <li> <a href="#">Import / Export Leads</a> </li>
                 <li> <a href="#">Sales Report</a> </li>
+                <li> <a href="{{route('admin.setting.categories')}}">Categories</a> </li>
                 <li> <a href="#">Users</a> </li>
             </ul>
         </nav>

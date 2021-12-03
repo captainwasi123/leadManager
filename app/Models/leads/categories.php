@@ -9,4 +9,6 @@ class categories extends Model
 {
     use HasFactory;
     protected $table = 'tbl_lead_categories';
+
+    public $timestamps = false;
 }

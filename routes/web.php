@@ -31,4 +31,15 @@ Route::middleware('adminAuth')->prefix('admin')->namespace('admin')->group(funct
 
         Route::get('/details/{id}', 'leadsController@details');
     });
+    //Categories
+    Route::prefix('categories')->group(function(){
+
+        Route::get('/', 'settingController@categories')->name('admin.setting.categories');
+        Route::post('/add', 'settingController@addCatogery')->name('admin.settings.categories.add');
+        Route::get('edit/{id}', 'settingController@editCatogery')->name('admin.settings.categories.edit');
+
+        Route::post('/update', 'settingController@updateCatogery')->name('admin.settings.categories.update');
+        Route::get('/delete/{id}', 'settingController@deleteCategory')->name('admin.settings.categories.delete');
+
+    });
 });
