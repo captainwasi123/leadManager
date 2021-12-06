@@ -468,3 +468,7 @@ button.close {
     float: right;
     text-align: right;
 }
+
+.sidebar-nav ul li.nav-small-cap {
+    color: #fff;
+}

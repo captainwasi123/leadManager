@@ -12,24 +12,7 @@
               </ul>
           </div>
       @endif
-
-@if(session()->has('success'))
-    <div class="alert alert-success kk">
-        {{ session()->get('success') }}
-    </div>
-@endif 
-
-@if(session()->has('update'))
-    <div class="alert alert-warning kk">
-        {{ session()->get('update') }}
-    </div>
-@endif 
-
-@if(session()->has('delmessage'))
-    <div class="alert alert-danger kk">
-        {{ session()->get('delmessage') }}
-    </div>
-@endif      
+   
 <div class="container-fluid">
     <div class="row">
         <!-- Column -->
@@ -84,9 +67,9 @@
 
                 <div class="card-body">
                         
-                    <div class="table-responsive m-t-40 lead-book-table">                                  
+                    <div class="table-responsive m-t-40">                                  
                    
-                        <table class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                         <table id="datatable" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
                                     <th>Catogries</th>
@@ -154,4 +137,13 @@
     });
   });
 </script>
+
+<script src="{{URL::to('/public/assets/')}}/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#datatable').DataTable({
+            dom: 'Bfrtip'
+        });
+    });
+    </script>
 @endsection

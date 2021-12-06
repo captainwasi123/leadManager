@@ -51,14 +51,14 @@ class settingController extends Controller
             $data->name=$req->name;
 
             $data->save();
-            return redirect(route('admin.setting.categories'))->with('update', 'Category has been Updated!');
+            return redirect(route('admin.setting.categories'))->with('success', 'Category has been Updated!');
         }
 
         public function deleteCategory(Request $req)
         {
             $data = categories::find(base64_decode($req->id));
             $data->delete();
-            return redirect(route('admin.setting.categories'))->with('delmessage', 'Category has been Deleted!');
+            return redirect(route('admin.setting.categories'))->with('success', 'Category has been Deleted!');
         }
 
 }

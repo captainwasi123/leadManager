@@ -28,6 +28,9 @@ Route::middleware('adminAuth')->prefix('admin')->namespace('admin')->group(funct
         Route::get('/', 'leadsController@index')->name('admin.leads');
         Route::get('/add', 'leadsController@add')->name('admin.leads.add');
         Route::post('/add', 'leadsController@addSubmit');
+        Route::get('pending', 'leadsController@pendingLead')->name('admin.leads.pending');
+        Route::get('mark/{id}', 'leadsController@markLead')->name('admin.leads.mark');
+        Route::get('marked', 'leadsController@markedLead')->name('admin.leads.marked');
 
         Route::get('/details/{id}', 'leadsController@details');
     });

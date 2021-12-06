@@ -15,3 +15,11 @@
 <!--Custom JavaScript -->
 <script src="{{URL::to('/public/assets/')}}/js/custom.min.js"></script>
 <script src="{{URL::to('/public/assets/')}}/js/dev.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+@if(session()->has('success'))
+	<script type="text/javascript">
+		$(document).ready(function(){
+			swal("Success!", "{{ session()->get('success') }}", "success");
+		});
+	</script>
+@endif

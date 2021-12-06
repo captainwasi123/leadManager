@@ -8,6 +8,7 @@ use App\Models\leads\source;
 use App\Models\leads\remarks;
 use App\Models\leads\leads;
 use App\Models\leads\categories;
+use Auth;
 
 class leadsController extends Controller
 {
@@ -16,6 +17,25 @@ class leadsController extends Controller
         $data['leads'] = leads::orderBy('created_at', 'desc')->get();
         $data['total_leads'] = leads::count();
         return view('admin.leads.index')->with($data);
+    }
+
+    function pendingLead(){
+        $data['leads'] = leads::where('status', 1)->orderBy('created_at', 'desc')->get();
+        return view('admin.leads.pending')->with($data);
+    }
+    function markLead($id){
+        $id = base64_decode($id);
+        $data = leads::find($id);
+        $data->status = '2';
+        $data->marked_by = Auth::id();
+        $data->save();
+
+        return redirect()->back()->with('success', 'Lead Marked!');
+    }
+
+    function markedLead(){
+        $data['leads'] = leads::where('status', 2)->orderBy('created_at', 'desc')->get();
+        return view('admin.leads.marked')->with($data);
     }
 
     function add(){
