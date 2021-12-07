@@ -33,6 +33,9 @@ Route::middleware('adminAuth')->prefix('admin')->namespace('admin')->group(funct
         Route::get('mark/{id}', 'leadsController@markLead')->name('admin.leads.mark');
         Route::get('marked', 'leadsController@markedLead')->name('admin.leads.marked');
         Route::get('pegination', 'leadsController@pegination')->name('admin.leads.pegination');
+        Route::get('filter', 'leadsController@filterLead')->name('admin.leads.filter');
+        Route::post('filter', 'leadsController@filterLeadSubmit')->name('admin.leads.filter');
+
 
         Route::get('/details/{id}', 'leadsController@details');
     });

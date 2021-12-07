@@ -38,7 +38,7 @@
                                 <li><a href="{{route('admin.leads.add')}}">Add Leads</a></li>
                                 <li><a href="{{route('admin.leads.pending')}}">Pending Leads</a></li>
                                 <li><a href="{{route('admin.leads.marked')}}">Marked Leads</a></li>
-                                <li><a href="#">Import Leads</a></li>
+                                <li><a href="{{route('admin.leads.filter')}}">Filter Leads</a></li>
                             </ul>
                         </li>
                         
