@@ -17,7 +17,7 @@
                     <h3 class="add-lead-head">Marked Leads</h3>
                     <div class="table-responsive m-t-40">                                  
                    
-                        <table id="datatable" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                        <table class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
                                     <th>Full Name</th>
@@ -66,6 +66,7 @@
                             </tbody>
                         </table>
                     </div>
+                    <div>{{$leads->links()}}</div>
                 </div>
             </div>
         </div>

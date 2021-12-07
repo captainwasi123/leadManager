@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'authController@index');
 Route::get('/signin', 'authController@signin');
 Route::post('/signin', 'authController@signinSubmit');
+Route::get('logout', 'authController@logout')->name('logout');
 
 //Middleware
 
@@ -31,6 +32,7 @@ Route::middleware('adminAuth')->prefix('admin')->namespace('admin')->group(funct
         Route::get('pending', 'leadsController@pendingLead')->name('admin.leads.pending');
         Route::get('mark/{id}', 'leadsController@markLead')->name('admin.leads.mark');
         Route::get('marked', 'leadsController@markedLead')->name('admin.leads.marked');
+        Route::get('pegination', 'leadsController@pegination')->name('admin.leads.pegination');
 
         Route::get('/details/{id}', 'leadsController@details');
     });

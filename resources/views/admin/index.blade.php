@@ -35,8 +35,8 @@
                         </div>
                         <div class="col-9">
                             <div class="sec-1">
-                                <h6>Total Converted Leads</h6>
-                                <h2>0</h2> 
+                                <h6>Total Pending Leads</h6>
+                                <h2>{{$total_pending_leads}}</h2> 
                             </div>
                                                                    
                         </div>                                    
@@ -54,8 +54,8 @@
                         </div>
                         <div class="col-9">
                             <div class="sec-1">
-                                <h6>Total Pending Leeds</h6>
-                                <h2>0</h2> 
+                                <h6>Total Marked Leads</h6>
+                                <h2>{{$total_marked_leads}}</h2> 
                             </div>
                                                                    
                         </div>                                    

@@ -17,7 +17,7 @@
                     <h3 class="add-lead-head">Pending Leads</h3>
                     <div class="table-responsive m-t-40">                                  
                    
-                        <table id="datatable" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                        <table class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
                                     <th>Full Name</th>
@@ -32,20 +32,6 @@
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            <tfoot>
-                                <tr>
-                                    <th>Full Name</th>
-                                    <th>Designation</th>
-                                    <th>City</th>
-                                    <th>Country</th>
-                                    <th>Mobile No</th>
-                                    <th>Category</th>
-                                    <th>Source</th>
-                                    <th>Created at</th>
-                                    <th>User</th>
-                                    <th>Action</th>
-                                </tr>
-                            </tfoot>
                             <tbody>
                                 @foreach($leads as $val)
                                     <tr>
@@ -62,14 +48,19 @@
                                          <a href="javascript:void(0)" data-href="{{route('admin.leads.mark',base64_encode($val->id))}}" class="btn btn-sm btn-primary checkItem"><i class="fa fa-check"></i></a>   
                                         </td>
                                     </tr>
-                                @endforeach  
+                                @endforeach
+                                    <tr>
+                                        <td colspan="10"></td>
+                                    </tr> 
                             </tbody>
                         </table>
                     </div>
+                    <div>{{$leads->links()}}</div>
                 </div>
             </div>
         </div>
-
+<style>
+</style>
 
 
         <div class="modal fade" id="leadDetailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

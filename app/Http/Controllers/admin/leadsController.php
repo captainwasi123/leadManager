@@ -15,12 +15,13 @@ class leadsController extends Controller
     //
     function index(){
         $data['leads'] = leads::orderBy('created_at', 'desc')->get();
+        // $data['leads'] = leads::where('status', 1)->orderBy('created_at', 'desc')->get();
         $data['total_leads'] = leads::count();
         return view('admin.leads.index')->with($data);
     }
 
     function pendingLead(){
-        $data['leads'] = leads::where('status', 1)->orderBy('created_at', 'desc')->get();
+        $data['leads'] = leads::where('status', 1)->orderBy('created_at', 'desc')->paginate(25);
         return view('admin.leads.pending')->with($data);
     }
     function markLead($id){
@@ -34,7 +35,7 @@ class leadsController extends Controller
     }
 
     function markedLead(){
-        $data['leads'] = leads::where('status', 2)->orderBy('created_at', 'desc')->get();
+        $data['leads'] = leads::where('status', 2)->orderBy('created_at', 'desc')->paginate(25);
         return view('admin.leads.marked')->with($data);
     }
 
