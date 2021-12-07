@@ -111,6 +111,7 @@
                                     <th>Mobile No</th>
                                     <th>Category</th>
                                     <th>Source</th>
+                                    <th>Status</th>
                                     <th>Created at</th>
                                     <th>User</th>
                                     <th class="text-right">Action</th>
@@ -126,11 +127,21 @@
                                         <td>{{$val->mobile}}</td>
                                         <td>{{@$val->category->name}}</td>
                                         <td>{{@$val->source->source}}</td>
+                                        <td>
+                                            @if($val->status == '1')
+                                                <span class="badge badge-primary">Pending</span>
+                                            @elseif($val->status == '2')
+                                                <span class="badge badge-info">Marked</span>
+                                            @endif
+                                        </td>
                                         <td>{{date('d-M-Y h:i a', strtotime($val->created_at))}}</td>
                                         <td>{{@$val->user->name}}</td>
                                         <td class="text-right">
                                             <a  href="{{route('admin.settings.categories.edit',base64_encode($val->id))}}" class="btn btn-sm btn-info" data-toggle="tooltip" title="" data-original-title="Edit Catogery" data-id="{{base64_encode($val->id)}}"><i class="fa fa-edit"></i></a>
-                                            <a href="javascript:void(0)" data-href="{{route('admin.settings.categories.delete',base64_encode($val->id))}}" class="btn btn-sm btn-danger deleteItem" data-toggle="tooltip" title="" data-original-title="Delete Catogery" data-id="{{base64_encode($val->id)}}"><i class="fa fa-trash"></i></a>
+                                            <!-- <a href="javascript:void(0)" data-href="{{route('admin.settings.categories.delete',base64_encode($val->id))}}" class="btn btn-sm btn-danger deleteItem" data-toggle="tooltip" title="" data-original-title="Delete Catogery" data-id="{{base64_encode($val->id)}}"><i class="fa fa-trash"></i></a> -->
+                                            @if($val->status == 1)
+                                            <a href="javascript:void(0)" data-href="{{route('admin.leads.mark',base64_encode($val->id))}}" class="btn btn-sm btn-primary checkItem"><i class="fa fa-check"></i></a>
+                                            @endif  
                                         </td>
                                     </tr>
                                 @endforeach  
