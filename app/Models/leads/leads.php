@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\leads\source;
 use App\Models\leads\categories;
+use App\Models\leads\remarks;
 use App\Models\User;
 use Auth;
 
@@ -46,5 +47,8 @@ class leads extends Model
     }
     public function user(){
         return $this->belongsTo(User::class, 'created_by');
+    }
+    public function remarks(){
+        return $this->hasMany(remarks::class, 'lead_id', 'id');
     }
 }

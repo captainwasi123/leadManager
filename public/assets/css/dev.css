@@ -67,3 +67,31 @@ a.relative.inline-flex.items-center.px-2.py-2.-ml-px.text-sm.font-medium.text-gr
         /*display: none;*/
         width: 20px;
     }
+
+
+#leadDetailModalBody button{
+    float: right;
+}
+
+.history{
+    border: 1px solid #ced4da;
+    padding: 15px 15px 0px 15px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.p-one b {
+    font-weight: bold;
+    font-size: 13px;
+}
+.p-one {
+    font-size: 11px;
+}
+
+.history p{
+    margin-bottom: 5px;
+}
+
+.remarks-body .modal-body {
+    margin: 0px;
+}  

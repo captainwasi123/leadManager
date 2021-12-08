@@ -58,7 +58,9 @@
                                         <td>{{@$val->source->source}}</td>
                                         <td>{{date('d-M-Y h:i a', strtotime($val->created_at))}}</td>
                                         <td>{{@$val->user->name}}</td>
-                                        <td><a class="btn btn-sm btn-info viewDetailLead" data-toggle="tooltip" title="" data-original-title="Lead Details" data-id="{{base64_encode($val->id)}}"><i class="fa fa-eye"></i></a>
+                                        <td>
+                                            <a href="javascript:void(0)" class="btn btn-sm btn-success viewRemarks" data-id="{{$val->id}}">{{count($val->remarks)}} <i class="fa fa-comment"></i></a>
+                                            <a class="btn btn-sm btn-info viewDetailLead" data-toggle="tooltip" title="" data-original-title="Lead Details" data-id="{{base64_encode($val->id)}}"><i class="fa fa-eye"></i></a>
                                          <!-- <a href="javascript:void(0)" data-href="{{route('admin.leads.mark',base64_encode($val->id))}}" class="btn btn-sm btn-primary checkItem"><i class="fa fa-exchange"></i></a> -->   
                                         </td>
                                     </tr>
@@ -83,6 +85,22 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="leadRemarksModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                
+                <div class="modal-content">
+                     <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <div class="row" id="leadRemarksModalBody">
+                        
+                        </div>
+                        
+                    </div>
+
+                   
+                    
+                </div>
+            </div>
 </div>
 @endsection
 @section('addScript')
@@ -110,6 +128,18 @@
       }
     });
   });
+
+     $(document).ready(function(){
+
+  $(document).on('click', '.viewRemarks', function(){
+    var id = $(this).data('id');
+    $.get("{{URL::to('/')}}/admin/leads/viewRemarks/"+id, function(data){
+
+      $('#leadRemarksModalBody').html(data);
+      $('#leadRemarksModal').modal('show');
+    });
+  });
+})
 
     </script>
 

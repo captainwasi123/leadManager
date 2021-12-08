@@ -105,4 +105,23 @@ class leadsController extends Controller
 
         return view('admin.leads.response.details', ['data' => $data]);
     }
+
+    function viewRemarks($id){
+        $data['lead_id'] = $id;
+        $data['remarks'] = remarks::where('lead_id', $id)->orderBy('created_at', 'desc')->get();
+        return view('admin.leads.response.remarks')->with($data);
+    }
+
+    function viewRemarksSubmit(Request $request){
+        $data = $request->all();
+
+        $r = new remarks;
+        $r->lead_id = $data['lead_id'];
+        $r->remarks = $data['remarks'];
+        $r->created_by = Auth::id();
+        $r->save();
+        
+        return redirect()->back()->with('success', 'New Remarks Added.');
+
+    }
 }

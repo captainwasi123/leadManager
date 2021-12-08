@@ -38,6 +38,9 @@ Route::middleware('adminAuth')->prefix('admin')->namespace('admin')->group(funct
 
 
         Route::get('/details/{id}', 'leadsController@details');
+
+        Route::get('/viewRemarks/{id}', 'leadsController@viewRemarks');
+        Route::post('remarks', 'leadsController@viewRemarksSubmit')->name('admin.leads.response.remarks');
     });
     //Categories
     Route::prefix('categories')->group(function(){
