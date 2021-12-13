@@ -197,4 +197,9 @@
             </div>                                                        
         </div>
       </div>
+        <div class="history-info">
+            <p class="text-right p-one"><b>{{date('d-M-Y h:i a', strtotime($data->created_at))}}</b>
+              <br>By: <b>{{@$data->user->name}}</b></p>
+        </div>
+      
     </div>

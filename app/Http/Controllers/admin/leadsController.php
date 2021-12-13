@@ -121,7 +121,7 @@ class leadsController extends Controller
         $r->created_by = Auth::id();
         $r->save();
         
-        return redirect()->back()->with('success', 'New Remarks Added.');
+        return redirect()->back()->with('success', 'New Remarks Added!');
 
     }
 }

@@ -87,7 +87,7 @@
                     </div>
                 </div>
                 <button  class="btn btn-primary m-t-20">Filter</button>
-                <a href="{{route('admin.leads.filter')}}"  class="btn btn-default m-t-20">Reset</a>
+                <a href="{{route('admin.leads.filter')}}"  class="btn btn-secondary m-t-20">Reset</a>
             </form>
         </div>
     </div>

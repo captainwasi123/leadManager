@@ -94,4 +94,12 @@ a.relative.inline-flex.items-center.px-2.py-2.-ml-px.text-sm.font-medium.text-gr
 
 .remarks-body .modal-body {
     margin: 0px;
+}
+
+.remarks-body .modal-body h3{
+    color: #7f63f4;
+}
+
+.history-info{
+    padding: 15px 15px 0px 15px;
 }  

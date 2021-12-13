@@ -21,8 +21,8 @@
                                       @foreach($remarks as $val)
                                       <div class="history">
                                           <p>{{$val->remarks}}</p>
-                                          <p class="text-right p-one"><b>{{$val->created_at}}</b>
-                                            <br>By: {{@$val->user->name}}</p>
+                                          <p class="text-right p-one"><b>{{date('d-M-Y h:i a', strtotime($val->created_at))}}</b>
+                                            <br>By: <b>{{@$val->user->name}}</b></p>
                                       </div>
                                       @endforeach
                                       @if(count($remarks) == 0)

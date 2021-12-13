@@ -53,4 +53,15 @@ Route::middleware('adminAuth')->prefix('admin')->namespace('admin')->group(funct
         Route::get('/delete/{id}', 'settingController@deleteCategory')->name('admin.settings.categories.delete');
 
     });
+
+    //Users
+    Route::prefix('users')->group(function(){
+        Route::get('/', 'userController@index')->name('admin.users.alluser');
+        Route::get('/delete/{id}', 'userController@deleteUser')->name('admin.users.alluser.delete');
+        Route::get('addnew', 'userController@addNew')->name('admin.users.addnew');
+        Route::post('/add', 'userController@addnewSubmit')->name('admin.users.post');
+        Route::get('edit/{id}', 'userController@editUser')->name('admin.users.updateuser');
+        // Route::post('/edit',[UserController::class,'updateUser'])->name('admin.users.updateUser');
+        Route::post('edit', 'userController@updateUser')->name('admin.users.updateUser');
+    });
 });
