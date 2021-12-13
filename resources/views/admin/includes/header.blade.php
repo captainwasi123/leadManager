@@ -21,15 +21,15 @@
                 <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>                        
             </ul>
             <ul class="navbar-nav my-lg-0">
-                 <li class="nav-item hidden-sm-down search-box">  
+                 <!-- <li class="nav-item hidden-sm-down search-box">  
                     <form class="search-boxs">
                         <input type="text" class="form-control" placeholder="Search">
                     </form>
-                </li>
+                </li> -->
                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-muted text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-message"></i>
+                    <!-- <a class="nav-link dropdown-toggle text-muted text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-message"></i>
                         <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
-                    </a>
+                    </a> -->
                     <div class="dropdown-menu mailbox animated slideInUp">
                         <ul>
                             <li>
@@ -51,9 +51,9 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-email"></i>
+                    <!-- <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-email"></i>
                         <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
-                    </a>
+                    </a> -->
                     <div class="dropdown-menu mailbox animated slideInUp" aria-labelledby="2">
                         <ul>
                             <li>
@@ -75,17 +75,41 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
+<<<<<<< HEAD
                     <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{URL::to('/public/assets/')}}/images/user.jpg" alt="user" class="profile-pic" /></a>
+=======
+                    <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{URL::to('/public/assets/')}}/images/users/blank-profile-pic.png" alt="user" class="profile-pic" /></a>
+>>>>>>> ca55d1c71ac5f4d685f3246a3bbdf7db09b02cd0
                     <div class="dropdown-menu dropdown-menu-right scale-up">
                         <ul class="dropdown-user">
                             <li>
                                 <div class="dw-user-box">
+<<<<<<< HEAD
                                     <div class="u-img"><img src="{{URL::to('/public/assets/')}}/images/user.jpg" alt="user"></div>
                                     <div class="u-text">
                                         <h4>{{Auth::user()->name}}</h4>
                                         <p class="text-muted">{{Auth::user()->email}}</p><a href="{{URL::to('/logout')}}" class="btn btn-rounded btn-danger btn-sm">Logout</a></div>
                                 </div>
                             </li>
+=======
+                                    <div class="u-img"><img src="{{URL::to('/public/assets/')}}/images/users/blank-profile-pic.png" alt="user"></div>
+                                    <div class="u-text">
+                                        <h4>{{Auth::user()->username}}</h4>
+                                        <p class="text-muted">{{Auth::user()->email}}</p>
+                                        <a href="{{route('logout')}}" class="btn btn-rounded btn-danger btn-sm"><i class="fa fa-power-off"></i> Logout</a>
+                                    <!-- <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li> -->
+                                </div>
+                                </div>
+                            </li>
+                           <!--  <li role="separator" class="divider"></li>
+                            <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
+                            <li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>
+                            <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li> -->
+>>>>>>> ca55d1c71ac5f4d685f3246a3bbdf7db09b02cd0
                         </ul>
                     </div>
                 </li>
