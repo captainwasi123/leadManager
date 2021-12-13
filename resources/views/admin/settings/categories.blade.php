@@ -72,13 +72,15 @@
                          <table id="datatable" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
+                                    <th>Sr.No</th>
                                     <th>Catogries</th>
                                     <th class="text-right">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($leads as $val)
+                                @foreach($leads as $key=> $val)
                                     <tr>
+                                        <td>{{++$key}}</td>
                                         <td>{{$val->name}}</td>
                                         <td class="text-right">
                                             <a  href="{{route('admin.settings.categories.edit',base64_encode($val->id))}}" class="btn btn-sm btn-info" data-toggle="tooltip" title="" data-original-title="Edit Catogery" data-id="{{base64_encode($val->id)}}"><i class="fa fa-edit"></i></a>
