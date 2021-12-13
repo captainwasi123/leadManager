@@ -80,6 +80,7 @@
                         <table id="datatable" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
+                                    <th>Sr.No</th>
                                     <th>Full Name</th>
                                     <th>Designation</th>
                                     <th>City</th>
@@ -107,8 +108,9 @@
                                 </tr>
                             </tfoot>
                             <tbody>
-                                @foreach($leads as $val)
+                                @foreach($leads as $key=> $val)
                                     <tr>
+                                        <td>{{++$key}}</td>
                                         <td>{{$val->name}}</td>
                                         <td>{{$val->designation}}</td>
                                         <td>{{$val->city}}</td>

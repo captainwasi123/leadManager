@@ -82,7 +82,6 @@ class leadsController extends Controller
                                 ->get();
                 $data['search'] = $search;
                 return view('admin.leads.filter')->with($data);
-                // return view('usertable');
             }        
 
     function add(){
