@@ -8,9 +8,9 @@
     <meta name="description" content="">
     <meta name="host" content="{{URL::to('/')}}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{URL::to('/public/assets/')}}/images/favicon.png">
-    <title>@yield('title') - Super Admin -  DNP LeadManager</title>
+    <title>@yield('title') - Agent 1 - DNP LeadManager</title>
     
-    @include('admin.includes.style')
+    @include('agent1.includes.style')
     @yield('addStyle')
 
 </head>
@@ -22,9 +22,9 @@
             <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
     </div>
     <div id="main-wrapper">
-        @include('admin.includes.header')
+        @include('agent1.includes.header')
         
-        @include('admin.includes.sidebar')
+        @include('agent1.includes.sidebar')
 
         <div class="page-wrapper">
             
@@ -46,7 +46,7 @@
         </div>
     </div>
 
-    @include('admin.includes.script')
+    @include('agent1.includes.script')
     <!-- ============================================================== -->
     <!-- This page plugins -->
     <!-- ============================================================== -->

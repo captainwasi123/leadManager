@@ -12,6 +12,18 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+
+    public static function addUser(array $data){
+        $u = new User;
+        $u->name = $data['fullname'];
+        $u->username = $data['username'];
+        $u->email = $data['email'];
+        $u->password = bcrypt($data['password']);
+        $u->role_id = $data['role_id'];
+        $u->status = '1';
+        $u->save();
+    }
+
     /**
      * The attributes that are mass assignable.
      *

@@ -6,9 +6,7 @@
                 <li> <a href="{{URL::to('/')}}">Dashboard</a> </li>
                 <li> <a href="{{route('admin.leads')}}">Leads</a> </li>
                 <li> <a href="#">Marked Leads</a> </li>
-                <li> <a href="#">Import / Export Leads</a> </li>
-                <li> <a href="#">Sales Report</a> </li>
-                <li> <a href="{{route('admin.users')}}">Users</a> </li>
+                <li> <a href="#">Follow-Up Leads</a> </li>
             </ul>
         </nav>
     </div>

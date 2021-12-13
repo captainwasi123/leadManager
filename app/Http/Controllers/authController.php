@@ -12,6 +12,8 @@ class authController extends Controller
         if(Auth::check()){
             if(Auth::user()->role_id == '1'){
                 return redirect(route('admin.dashboard'));
+            }elseif(Auth::user()->role_id == '2'){
+                return redirect(route('agent1.dashboard'));
             }
         }else{
             return redirect('/signin');
@@ -30,5 +32,10 @@ class authController extends Controller
         }else{
             return redirect()->back()->with('error', 'Authentication Failed.');
         }
+    }
+
+    function logout(){
+        Auth::logout();
+        return redirect('/signin');
     }
 }

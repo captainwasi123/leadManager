@@ -1,11 +1,11 @@
-@extends('admin.includes.master')
-@section('title', 'Leads')
+@extends('agent1.includes.master')
+@section('title', 'Dashboard')
 @section('content')
 
 <div class="container-fluid">
     <div class="row">
         <!-- Column -->
-        <div class="col-lg-4 col-md-6">
+         <div class="col-lg-4 col-md-6">
             <div class="card card-main">
                 <div class="card-body main-panel">
                     <!-- Row -->
@@ -62,21 +62,14 @@
                     </div>
                 </div>
             </div>
-        </div>
-     
+        </div>             
     </div>
     <!-- Row -->
     <div class="row">
         <div class="col-lg-12 col-md-12">
-
             <div class="card">
-
                 <div class="card-body">
-                    <a href="{{route('admin.leads.add')}}" class="btn btn-info waves-effect waves-light add-lead">ADD NEW LEADS</a>
-                        <button class="btn btn-info waves-effect waves-light add-csv" type="button">ADD CSV FILE
-                        <span class="btn-label"><i class="fa fa-heart"></i></span></button>
-                    <div class="table-responsive m-t-40 lead-book-table">                                  
-                   
+                    <div class="table-responsive m-t-40">
                         <table id="datatable" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
@@ -128,6 +121,7 @@
             </div>
         </div>
 </div>
+
 @endsection
 @section('addScript')
     <script src="{{URL::to('/public/assets/')}}/plugins/datatables/jquery.dataTables.min.js"></script>
