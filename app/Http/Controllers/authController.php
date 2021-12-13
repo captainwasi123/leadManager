@@ -34,15 +34,12 @@ class authController extends Controller
         }
     }
 
-<<<<<<< HEAD
-    function logout(){
-        Auth::logout();
-        return redirect('/signin');
-=======
+
+
     public function logout(){
         Auth::logout();
         
              return redirect('/signin');
->>>>>>> ca55d1c71ac5f4d685f3246a3bbdf7db09b02cd0
+
     }
 }
