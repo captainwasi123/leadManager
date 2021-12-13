@@ -73,14 +73,6 @@
                             <thead>
                                 <tr>
                                     <th>Catogries</th>
-                                    <!-- <th>Designation</th>
-                                    <th>City</th>
-                                    <th>Country</th>
-                                    <th>Mobile No</th>
-                                    <th>Category</th>
-                                    <th>Source</th>
-                                    <th>Created at</th>
-                                    <th>User</th> -->
                                     <th class="text-right">Action</th>
                                 </tr>
                             </thead>
@@ -88,14 +80,6 @@
                                 @foreach($leads as $val)
                                     <tr>
                                         <td>{{$val->name}}</td>
-                                        <!-- <td>{{$val->designation}}</td>
-                                        <td>{{$val->city}}</td>
-                                        <td>{{$val->country}}</td>
-                                        <td>{{$val->mobile}}</td>
-                                        <td>{{@$val->category->name}}</td>
-                                        <td>{{@$val->source->source}}</td>
-                                        <td>{{date('d-M-Y h:i a', strtotime($val->created_at))}}</td>
-                                        <td>{{@$val->user->name}}</td> -->
                                         <td class="text-right">
                                             <a  href="{{route('admin.settings.categories.edit',base64_encode($val->id))}}" class="btn btn-sm btn-info" data-toggle="tooltip" title="" data-original-title="Edit Catogery" data-id="{{base64_encode($val->id)}}"><i class="fa fa-edit"></i></a>
                                             <a href="javascript:void(0)" data-href="{{route('admin.settings.categories.delete',base64_encode($val->id))}}" class="btn btn-sm btn-danger deleteItem" data-toggle="tooltip" title="" data-original-title="Delete Catogery" data-id="{{base64_encode($val->id)}}"><i class="fa fa-trash"></i></a>

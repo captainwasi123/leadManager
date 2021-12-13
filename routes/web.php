@@ -16,11 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'authController@index');
 Route::get('/signin', 'authController@signin');
 Route::post('/signin', 'authController@signinSubmit');
-<<<<<<< HEAD
 Route::get('/logout', 'authController@logout');
-=======
 Route::get('logout', 'authController@logout')->name('logout');
->>>>>>> ca55d1c71ac5f4d685f3246a3bbdf7db09b02cd0
 
 //Admin
 
@@ -29,8 +26,6 @@ Route::get('logout', 'authController@logout')->name('logout');
         Route::get('/', 'adminController@index')->name('admin.dashboard');
         //Leads
         Route::prefix('leads')->group(function(){
-
-<<<<<<< HEAD
             Route::get('/', 'leadsController@index')->name('admin.leads');
             Route::get('/add', 'leadsController@add')->name('admin.leads.add');
             Route::post('/add', 'leadsController@addSubmit');
@@ -45,7 +40,6 @@ Route::get('logout', 'authController@logout')->name('logout');
             Route::get('/add', 'userController@add')->name('admin.users.add');
             Route::post('/add', 'userController@addSubmit');
         });
-=======
         Route::get('/', 'leadsController@index')->name('admin.leads');
         Route::get('/add', 'leadsController@add')->name('admin.leads.add');
         Route::post('/add', 'leadsController@addSubmit');
@@ -83,7 +77,6 @@ Route::get('logout', 'authController@logout')->name('logout');
         Route::get('edit/{id}', 'userController@editUser')->name('admin.users.updateuser');
         // Route::post('/edit',[UserController::class,'updateUser'])->name('admin.users.updateUser');
         Route::post('edit', 'userController@updateUser')->name('admin.users.updateUser');
->>>>>>> ca55d1c71ac5f4d685f3246a3bbdf7db09b02cd0
     });
 
 

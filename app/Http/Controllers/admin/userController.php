@@ -10,7 +10,6 @@ class userController extends Controller
 {
     //
     function index(){
-<<<<<<< HEAD
         $data = User::all();
 
         return view('admin.users.index', ['data' => $data]);
@@ -30,7 +29,6 @@ class userController extends Controller
         User::addUser($data);
         dd($data);
     }
-=======
         $data['users'] = User::paginate(25);
         return view('admin.users.alluser')->with($data);
     }
@@ -84,6 +82,4 @@ class userController extends Controller
 
     }
 
-
->>>>>>> ca55d1c71ac5f4d685f3246a3bbdf7db09b02cd0
 }

@@ -43,14 +43,6 @@
                                             @endif
 
                                         </td>
-
-                                        <!-- <td>
-                                        @if($val->status == '1')
-                                                <span class="badge badge-primary">Active</span>
-                                            @elseif($val->status == '2')
-                                                <span class="badge badge-info">Inactive</span>
-                                            @endif
-                                        </td> -->
                                         <td>{{date('d-M-Y h:i a', strtotime($val->created_at))}}</td>
                                         <td>
                                              @if($val->id != '1')
