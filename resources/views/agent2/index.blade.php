@@ -1,4 +1,4 @@
-@extends('agent1.includes.master')
+@extends('agent2.includes.master')
 @section('title', 'Dashboard')
 @section('content')
 
@@ -54,7 +54,7 @@
                         </div>
                         <div class="col-9">
                             <div class="sec-1">
-                                <h6>Total Marked Leads</h6>
+                                <h6>Your Marked Leads</h6>
                                 <h2>{{$total_marked_leads}}</h2> 
                             </div>
                                                                    
@@ -108,12 +108,18 @@
 
             <div class="modal fade" id="leadRemarksModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <div class="row" id="leadRemarksModalBody">
-                            </div>
+                
+                <div class="modal-content">
+                     <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <div class="row" id="leadRemarksModalBody">
+                        
+                        </div>
+                        
                     </div>
-            </div>
+
+                   
+                    
+                </div>
             </div>
 
         </div>
@@ -134,7 +140,7 @@
         $('#leadDetailModal').modal('show');
         $('#leadDetailModalBody').html('<img src="'+host+'/public/assets/images/loader.gif"/>');
 
-        $.get(host+"/agent1/leads/details/"+id, function(data, status){
+        $.get(host+"/agent2/leads/details/"+id, function(data, status){
             $('#leadDetailModalBody').html(data);
         });
     });

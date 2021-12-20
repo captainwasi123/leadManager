@@ -1,4 +1,4 @@
-@extends('admin.includes.master')
+@extends('agent1.includes.master')
 @section('title', 'Add Lead')
 @section('content')
 
@@ -10,11 +10,11 @@
                     <form method="post" class="form-horizontal">
                         @csrf
                         <h3 class="add-lead-head">Lead Information</h3> 
-                        @if(session()->has('success'))
+                        <!-- @if(session()->has('success'))
                             <div class="alert alert-success">
                                 {{ session()->get('success') }}
                             </div>
-                        @endif
+                        @endif -->
                         <div class="form-body">
 
                                                                

@@ -1,4 +1,4 @@
-@extends('admin.includes.master')
+@extends('agent2.includes.master')
 @section('title', 'Leads')
 @section('content')
 
@@ -14,58 +14,53 @@
             <div class="card">
 
                 <div class="card-body">
-                    <h3 class="add-lead-head">All User</h3>
+                    <h3 class="add-lead-head">Marked Leads</h3>
                     <div class="table-responsive m-t-40">                                  
                    
                         <table class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
                                     <th>Sr.No</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Role</th>
+                                    <th>Full Name</th>
+                                    <th>Designation</th>
+                                    <th>City</th>
+                                    <th>Country</th>
+                                    <th>Mobile No</th>
+                                    <th>Category</th>
+                                    <th>Source</th>
                                     <th>Created at</th>
+                                    <th>User</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($users as $key=> $val)
+                                @foreach($leads as $key=> $val)
                                     <tr>
                                         <td>{{++$key}}</td>
                                         <td>{{$val->name}}</td>
-                                        <td>{{$val->email}}</td>
-                                        <td>
-
-                                            @if($val->role_id == '1')
-                                                <span class="badge badge-primary">Admin</span>
-                                            @elseif($val->role_id == '2')
-                                                <span class="badge badge-info">Agent 1</span>
-                                                @elseif($val->role_id == '3')
-                                                <span class="badge badge-success">Agent 2</span>
-                                            @endif
-
-                                        </td>
+                                        <td>{{$val->designation}}</td>
+                                        <td>{{$val->city}}</td>
+                                        <td>{{$val->country}}</td>
+                                        <td>{{$val->mobile}}</td>
+                                        <td>{{@$val->category->name}}</td>
+                                        <td>{{@$val->source->source}}</td>
                                         <td>{{date('d-M-Y h:i a', strtotime($val->created_at))}}</td>
+                                        <td>{{@$val->user->name}}</td>
                                         <td>
-                                             @if($val->id != '1')
-                                        <a  href="{{route('admin.users.updateuser',base64_encode($val->id))}}" class="btn btn-sm btn-info" data-toggle="tooltip" title="" data-original-title="Edit Catogery" data-id="{{base64_encode($val->id)}}"><i class="fa fa-edit"></i></a>
-                                            <a href="javascript:void(0)" data-href="{{route('admin.users.alluser.delete',base64_encode($val->id))}}" class="btn btn-sm btn-danger deleteItem" data-toggle="tooltip" title="" data-original-title="Delete Catogery" data-id="{{base64_encode($val->id)}}"><i class="fa fa-trash"></i></a>
-                                            @endif   
+                                            <a href="javascript:void(0)" class="btn btn-sm btn-success viewRemarks2" data-id="{{$val->id}}">{{count($val->remarks)}} <i class="fa fa-comment"></i></a>
+                                            <a class="btn btn-sm btn-info viewDetailLeadagent2" data-toggle="tooltip" title="" data-original-title="Lead Details" data-id="{{base64_encode($val->id)}}"><i class="fa fa-eye"></i></a>
+                                         <!-- <a href="javascript:void(0)" data-href="{{route('admin.leads.mark',base64_encode($val->id))}}" class="btn btn-sm btn-primary checkItem"><i class="fa fa-exchange"></i></a> -->   
                                         </td>
                                     </tr>
-                                @endforeach
-                                    <tr>
-                                        <td colspan="10"></td>
-                                    </tr> 
+                                @endforeach  
                             </tbody>
                         </table>
                     </div>
-                    <div>{{$users->links()}}</div>
+                    <div>{{$leads->links()}}</div>
                 </div>
             </div>
         </div>
-<style>
-</style>
+
 
 
         <div class="modal fade" id="leadDetailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -78,7 +73,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="modal fade" id="leadRemarksModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 
@@ -94,8 +89,6 @@
                     
                 </div>
             </div>
-        
-    </div>
 </div>
 @endsection
 @section('addScript')
@@ -107,6 +100,12 @@
             dom: 'Bfrtip'
         });
         
+        // swal({
+        // title: "Good job!",
+        // text: "You clicked the button!",
+        // icon: "success",
+        // button: "Aww yiss!",
+        // });
     });
     $(document).ready(function(){
 
@@ -118,11 +117,11 @@
     });
   });
 
-    $(document).ready(function(){
+     $(document).ready(function(){
 
-  $(document).on('click', '.viewRemarks', function(){
+  $(document).on('click', '.viewRemarks2', function(){
     var id = $(this).data('id');
-    $.get("{{URL::to('/')}}/admin/leads/viewRemarks/"+id, function(data){
+    $.get("{{URL::to('/')}}/agent2/leads/viewRemarks/"+id, function(data){
 
       $('#leadRemarksModalBody').html(data);
       $('#leadRemarksModal').modal('show');
@@ -130,16 +129,15 @@
   });
 });
 
-$(document).ready(function(){
+$(document).on('click', '.viewDetailLeadagent2', function(){
+        var id = $(this).data('id');
+        $('#leadDetailModal').modal('show');
+        $('#leadDetailModalBody').html('<img src="'+host+'/public/assets/images/loader.gif"/>');
 
-    $('.deleteItem').click(function(){
-      var link = $(this).data('href');
-      if(confirm('Are you sure want to delete this User?')){
-        window.location.href = link;
-      }
+        $.get(host+"/agent2/leads/details/"+id, function(data, status){
+            $('#leadDetailModalBody').html(data);
+        });
     });
-  });   
-
     </script>
 
 @endsection

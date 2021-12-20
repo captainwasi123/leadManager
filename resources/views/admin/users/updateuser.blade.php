@@ -40,6 +40,8 @@
                                 <select class="form-control custom-select" name="role_id" value="{{$data['role_id']}}">
                                     <option value="">Role</option>
                                     <option value="1" {{!empty($data['role_id']) && $data['role_id'] == '1' ? 'selected' : ''}}>Admin</option>
+                                    <option value="2" {{!empty($data['role_id']) && $data['role_id'] == '2' ? 'selected' : ''}}>Agent 1</option>
+                                    <option value="3" {{!empty($data['role_id']) && $data['role_id'] == '3' ? 'selected' : ''}}>Agent 2</option>
                                 </select>
                     </div>
                 </div>

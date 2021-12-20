@@ -11,7 +11,7 @@
                   @endforeach
               </ul>
           </div>
-      @endif
+@endif
    
 <div class="container-fluid">
     <div class="card">
@@ -39,6 +39,8 @@
                                 <select class="form-control custom-select" name="role_id" value="">
                                     <option value="">Role</option>
                                     <option value="1">Admin</option>
+                                    <option value="2">Agent 1</option>
+                                    <option value="3">Agent 2</option>
                                 </select>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-@extends('admin.includes.master')
+@extends('agent1.includes.master')
 @section('title', 'Leads')
 @section('content')
 
@@ -118,7 +118,7 @@
                                         <td>{{@$val->source->source}}</td>
                                         <td>{{date('d-M-Y h:i a', strtotime($val->created_at))}}</td>
                                         <td>{{@$val->user->name}}</td>
-                                        <td><a class="btn btn-sm btn-info viewDetailLead" data-toggle="tooltip" title="" data-original-title="Lead Details" data-id="{{base64_encode($val->id)}}"><i class="fa fa-eye"></i></a></td>
+                                        <td><a class="btn btn-sm btn-info viewDetailLeadagent" data-toggle="tooltip" title="" data-original-title="Lead Details" data-id="{{base64_encode($val->id)}}"><i class="fa fa-eye"></i></a></td>
                                     </tr>
                                 @endforeach  
                             </tbody>
@@ -135,6 +135,16 @@
     $(document).ready(function() {
         $('#datatable').DataTable({
             dom: 'Bfrtip'
+        });
+    });
+
+    $(document).on('click', '.viewDetailLeadagent', function(){
+        var id = $(this).data('id');
+        $('#leadDetailModal').modal('show');
+        $('#leadDetailModalBody').html('<img src="'+host+'/public/assets/images/loader.gif"/>');
+
+        $.get(host+"/agent1/leads/details/"+id, function(data, status){
+            $('#leadDetailModalBody').html(data);
         });
     });
     </script>

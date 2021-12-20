@@ -15,6 +15,9 @@ class authController extends Controller
             }elseif(Auth::user()->role_id == '2'){
                 return redirect('agent1');
             }
+            elseif(Auth::user()->role_id == '3'){
+                return redirect('agent2');
+            }
         }else{
             return redirect('/signin');
         }
@@ -33,19 +36,8 @@ class authController extends Controller
             return redirect()->back()->with('error', 'Authentication Failed.');
         }
     }
-
-<<<<<<< HEAD
-
-
     public function logout(){
         Auth::logout();
-        
-             return redirect('/signin');
-
-=======
-    function logout(){
-        Auth::logout();
         return redirect('/signin');
->>>>>>> e5e44fac7d7b9fadba02c99e811a7c89bc1bbc72
     }
 }

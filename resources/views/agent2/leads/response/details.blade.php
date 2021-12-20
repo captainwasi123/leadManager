@@ -187,33 +187,17 @@
             </div>                                                         
         </div>
         <div class="row">
-            <!-- <div class="col-md-12">
+            <div class="col-md-12">
                 <div class="cat-title">
                     <label class="control-label">Message:</label><br>
                     <div class="cat-discrip">
                         <label class="control-label">{{$data->description}}</label>
                     </div>
                 </div>                                                
-            </div> -->
-            <div class="col-md-3 col-3">
-                <div class=" row cat-title">
-                    <label class="control-label col-md-12">Message:</label>
-                </div>                                                
-            </div>
-            <div class="col-md-1 col-1">
-                <div class=" row cat-title">
-                    <label class="control-label col-md-12">:</label>
-                </div>                                                
-            </div>
-            <div class="col-md-8 col-7">
-                <div class=" row cat-discrip">
-                    <label class="control-label col-md-12">{{$data->description}}</label>
-                </div>                                                
-            </div>
-
+            </div>                                                        
         </div>
       </div>
-        <div class="history-info">
+      <div class="history-info">
           <p class="text-right p-one"><b>{{date('d-M-Y h:i a', strtotime($data->created_at))}}</b>
           <br>By: <b>{{@$data->user->name}}</b></p>
         </div>

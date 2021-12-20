@@ -102,4 +102,8 @@ a.relative.inline-flex.items-center.px-2.py-2.-ml-px.text-sm.font-medium.text-gr
 
 .history-info{
     padding: 15px 15px 0px 15px;
+}
+
+.Sample-file a {
+    float: right;
 }  
