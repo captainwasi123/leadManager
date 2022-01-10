@@ -77,6 +77,27 @@
             <div>
                 <canvas id="chart6" height="150"></canvas>
             </div>
+            <br><br>
+            <div class="legend_div">
+                    <ul>
+                        <li>
+                            <div class="" style="background-color: #67C7EB"></div>
+                            <p>Assigned Lead</p>
+                        </li>
+                        <li>
+                            <div class="" style="background-color: #cf9fff"></div>
+                            <p>Fresh Lead</p>
+                        </li>
+                        <li>
+                            <div class="" style="background-color: #B97D10"></div>
+                            <p>Pending Lead</p>
+                        </li>
+                        <li>
+                            <div class="" style="background-color: #FBCA03"></div>
+                            <p>Marked Lead</p>
+                        </li>
+                    </ul>
+                </div>
         </div>
     </div>
   </div>
@@ -230,9 +251,9 @@
             },
             {
                 label: "Fresh Leads",
-                fillColor: "#CF9FFF",
-                strokeColor: "#CF9FFF",
-                pointColor: "#CF9FFF",
+                fillColor: "#cf9fff",
+                strokeColor: "#cf9fff",
+                pointColor: "#cf9fff",
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(97,100,193,1)",
@@ -244,9 +265,9 @@
             },
             {
                 label: "Pending Leads",
-                fillColor: "#FF5733 ",
-                strokeColor: "#FF5733 ",
-                pointColor: "#FF5733 ",
+                fillColor: "#B97D10",
+                strokeColor: "#B97D10",
+                pointColor: "#B97D10",
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(97,100,193,1)",
