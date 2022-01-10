@@ -36,11 +36,26 @@ Route::get('logout', 'authController@logout')->name('logout');
             Route::get('filter', 'leadsController@filterLead')->name('admin.leads.filter');
             Route::post('filter', 'leadsController@filterLeadSubmit')->name('admin.leads.filter');
 
+            Route::get('fresh', 'leadsController@freshLead')->name('admin.leads.fresh');
+            Route::post('assignfresh', 'leadsController@assignfreshLead')->name('admin.leads.assign');
+            Route::get('import', 'leadsController@importLead')->name('admin.leads.import');
+            Route::post('importLead', 'leadsController@importedLead')->name('adminImport');
 
             Route::get('/details/{id}', 'leadsController@details');
 
             Route::get('/viewRemarks/{id}', 'leadsController@viewRemarks');
             Route::post('remarks', 'leadsController@viewRemarksSubmit')->name('admin.leads.response.remarks');
+
+            Route::prefix('widget')->group(function(){
+
+                Route::get('pending', 'leadsController@pendingWidget')->name('admin.leads.widget.pending');
+                Route::get('marked', 'leadsController@markedWidget')->name('admin.leads.widget.marked');
+                Route::get('total', 'leadsController@totalWidget')->name('admin.leads.widget.total');
+            });
+
+            Route::prefix('analytics')->group(function(){
+                Route::get('analytics', 'analyticsController@analytics')->name('admin.leads.analytics');
+            });
         });
 
         //Categories
@@ -84,6 +99,14 @@ Route::get('logout', 'authController@logout')->name('logout');
             Route::get('import', 'leadsController@importLead')->name('agent1.leads.import');
             Route::post('importLead', 'leadsController@importedLead')->name('agentImport');
 
+            Route::prefix('widget')->group(function(){
+
+                Route::get('total', 'leadsController@totalWidget')->name('agent1.leads.widget.total');
+                Route::get('pending', 'leadsController@pendingWidget')->name('agent1.leads.widget.pending');
+                Route::get('marked', 'leadsController@markedWidget')->name('agent1.leads.widget.marked');
+                Route::get('fresh', 'leadsController@freshWidget')->name('agent1.leads.widget.fresh');
+            });
+
         });
     });
 
@@ -102,6 +125,17 @@ Route::get('logout', 'authController@logout')->name('logout');
             Route::post('remarks', 'leadsController@viewRemarksSubmit')->name('agent2.leads.response.remarks');
             Route::get('marked', 'leadsController@markedLead')->name('agent2.leads.marked');
             Route::get('mark/{id}', 'leadsController@markLead')->name('agent2.leads.mark');
+
+            Route::prefix('widget')->group(function(){
+
+                Route::get('pending', 'leadsController@pendingWidget')->name('agent2.leads.widget.pending');
+                Route::get('marked', 'leadsController@markedWidget')->name('agent2.leads.widget.marked');
+                Route::get('total', 'leadsController@totalWidget')->name('agent2.leads.widget.total');
+            });
+
+            Route::prefix('analytics')->group(function(){
+                Route::get('analytics', 'analyticsController@analytics')->name('agent2.leads.analytics');
+            });
 
 
         });

@@ -200,5 +200,9 @@
       <div class="history-info">
           <p class="text-right p-one"><b>{{date('d-M-Y h:i a', strtotime($data->created_at))}}</b>
           <br>By: <b>{{@$data->user->name}}</b></p>
+          <a href="javascript:void(0)" class="btn btn-sm btn-success viewRemarks2" data-id="{{$data->id}}">{{count($data->remarks)}} Remarks: <i class="fa fa-comment"></i></a>
+          @if($data->status == '2')
+          <a href="javascript:void(0)" data-href="{{route('agent2.leads.mark',base64_encode($data->id))}}" class="btn btn-sm btn-primary checkItem">Marked <i class="fa fa-check"></i></a>
+          @endif
         </div>
     </div>

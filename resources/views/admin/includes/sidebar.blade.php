@@ -12,9 +12,12 @@
                         <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-trending-up"></i><span class="hide-menu">Leads</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="{{route('admin.leads.add')}}">Add Leads</a></li>
+                                <li><a href="{{route('admin.leads.fresh')}}">Fresh Leads</a></li>
                                 <li><a href="{{route('admin.leads.pending')}}">Pending Leads</a></li>
                                 <li><a href="{{route('admin.leads.marked')}}">Marked Leads</a></li>
                                 <li><a href="{{route('admin.leads.filter')}}">Filter Leads</a></li>
+                                <li><a href="{{route('admin.leads.analytics')}}">Analytics</a></li>
+                                <li><a href="{{route('admin.leads.import')}}">Imports</a></li>
                             </ul>
                         </li>
                         

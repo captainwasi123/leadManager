@@ -16,6 +16,7 @@
 <script src="{{URL::to('/public/assets/')}}/js/custom.min.js"></script>
 <script src="{{URL::to('/public/assets/')}}/js/dev.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="{{URL::to('/public/assets/')}}/plugins/Chart.js/Chart.min.js"></script>
 @if(session()->has('success'))
 	<script type="text/javascript">
 		$(document).ready(function(){
@@ -30,3 +31,29 @@
 		});
 	</script>
 @endif
+<script type="text/javascript">
+	
+    $(document).ready(function(){
+
+  $(document).on('click', '.viewRemarks2', function(){
+    var id = $(this).data('id');
+    $('#leadDetailModal').modal('hide');
+    $.get("{{URL::to('/')}}/agent2/leads/viewRemarks/"+id, function(data){
+
+      $('#leadRemarksModalBody').html(data);
+      $('#leadRemarksModal').modal('show');
+    });
+  });
+
+ $(document).on('click', '.viewDetailLeadagent2', function(){
+        var id = $(this).data('id');
+        $('#leadDetailModal').modal('show');
+        $('#leadDetailModalBody').html('<img src="'+host+'/public/assets/images/loader.gif"/>');
+
+        $.get(host+"/agent2/leads/details/"+id, function(data, status){
+            $('#leadDetailModalBody').html(data);
+        });
+    });    
+
+});
+</script>

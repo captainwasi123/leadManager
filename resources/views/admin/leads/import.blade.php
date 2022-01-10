@@ -1,4 +1,4 @@
-@extends('agent1.includes.master')
+@extends('admin.includes.master')
 @section('title', 'Leads')
 @section('content')
 
@@ -16,7 +16,7 @@
 <div class="container-fluid">
     <div class="card">
         <div class="card-body">
-            <form action="{{route('agentImport')}}" method="post" enctype="multipart/form-data" class="form-horizontal">
+            <form action="{{route('adminImport')}}" method="post" enctype="multipart/form-data" class="form-horizontal">
                 @csrf
                 <h3 class="add-lead-head">Import Leads Information</h3>
                 <div class="row m-t-30">
@@ -24,7 +24,7 @@
                     <div class="Sample-file">
                     <label>Download file:</label>
                         <a href="{{URL::to('/public/abc.csv')}}" target="_blank">Sample file <i class="mdi mdi-download"></i></a>                                                      
-                        <input type="file" class="form-control" name="file" placeholder="Enter Name" value="" required>
+                        <input type="file" class="form-control" name="file" accept=".csv" placeholder="Enter Name" value="" required>
                     </div>
                     </div>
                 <div class="col-md-4">

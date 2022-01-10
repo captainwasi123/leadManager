@@ -85,5 +85,22 @@ class leadsController extends Controller
             return redirect()->back()->with('success', 'Total: '.Session::get('format').' rows imported sucessfuly!');
         }
     }
+
+    function totalWidget(){
+        $data = categories::orderBy('name')->get();
+        return view('agent1.leads.response.totalDetails1', ['data' => $data]);
+    }
+    function pendingWidget(){
+        $data['categories'] = categories::orderBy('name')->get();
+        return view('agent1.leads.response.pendingDetails1')->with($data);
+    }
+    function markedWidget(){
+        $data['categories'] = categories::orderBy('name')->get();
+        return view('agent1.leads.response.markedDetails1')->with($data);
+    }
+    function freshWidget(){
+        $data['categories'] = categories::orderBy('name')->get();
+        return view('agent1.leads.response.freshDetails1')->with($data);
+    }
     
 }

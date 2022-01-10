@@ -14,7 +14,7 @@
             <div class="card">
 
                 <div class="card-body">
-                    <h3 class="add-lead-head">Pending Leads</h3>
+                    <h3 class="add-lead-head">Fresh Leads</h3>
                     <div class="table-responsive m-t-40">                                  
                    
                         <table class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
@@ -47,7 +47,7 @@
                                         <td>{{date('d-M-Y h:i a', strtotime($val->created_at))}}</td>
                                         <td>{{@$val->user->name}}</td>
                                         <td>
-                                         <a href="javascript:void(0)" class="btn btn-sm btn-success viewRemarks1" data-id="{{$val->id}}">{{count($val->remarks)}} <i class="fa fa-comment"></i></a>   
+                                         <!-- <a href="javascript:void(0)" class="btn btn-sm btn-success viewRemarks1" data-id="{{$val->id}}">{{count($val->remarks)}} <i class="fa fa-comment"></i></a> -->   
                                         <a class="btn btn-sm btn-info viewDetailLeadagent" data-toggle="tooltip" title="" data-original-title="Lead Details" data-id="{{base64_encode($val->id)}}"><i class="fa fa-eye"></i></a>
                                          <!-- <a href="javascript:void(0)" data-href="{{route('admin.leads.mark',base64_encode($val->id))}}" class="btn btn-sm btn-primary checkItem"><i class="fa fa-check"></i></a> -->   
                                         </td>
@@ -117,17 +117,7 @@
     });
   });
 
-    $(document).ready(function(){
 
-  $(document).on('click', '.viewRemarks1', function(){
-    var id = $(this).data('id');
-    $.get("{{URL::to('/')}}/agent1/leads/viewRemarks/"+id, function(data){
-
-      $('#leadRemarksModalBody').html(data);
-      $('#leadRemarksModal').modal('show');
-    });
-  });
-});
 
  $(document).on('click', '.viewDetailLeadagent', function(){
         var id = $(this).data('id');

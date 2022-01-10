@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <div class="row">
         <!-- Column -->
-         <div class="col-lg-4 col-md-6">
+         <div class="col-lg-3 col-md-6">
             <div class="card card-main">
                 <div class="card-body main-panel">
                     <!-- Row -->
@@ -25,7 +25,27 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-3 col-md-6">
+            <div class="card card-main">
+                <div class="card-body main-panel">
+                    <!-- Row -->
+
+                    <div class="row">
+                        <div class="col-3 p-l-0 p-r-0" align="center">
+                            <img src="{{URL::to('/public/assets/')}}/images/icon.png" width="70px">
+                        </div>
+                        <div class="col-9">
+                            <div class="sec-1">
+                                <h6>Fresh Leads</h6>
+                                <h2>{{$fresh_leads}}</h2> 
+                            </div>
+                                                                   
+                        </div>                                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
             <div class="card card-main">
                 <div class="card-body main-panel">
                     <!-- Row -->
@@ -35,7 +55,7 @@
                         </div>
                         <div class="col-9">
                             <div class="sec-1">
-                                <h6>Total Pending Leads</h6>
+                                <h6>Pending Leads</h6>
                                 <h2>{{$total_pending_leads}}</h2> 
                             </div>
                                                                    
@@ -44,7 +64,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-3 col-md-6">
             <div class="card card-main">
                 <div class="card-body main-panel">
                     <!-- Row -->
@@ -54,7 +74,7 @@
                         </div>
                         <div class="col-9">
                             <div class="sec-1">
-                                <h6>Total Marked Leads</h6>
+                                <h6>Marked Leads</h6>
                                 <h2>{{$total_marked_leads}}</h2> 
                             </div>
                                                                    

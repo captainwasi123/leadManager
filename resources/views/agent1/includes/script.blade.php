@@ -30,3 +30,18 @@
 		});
 	</script>
 @endif
+
+<script>
+	$(document).ready(function(){
+
+  $(document).on('click', '.viewRemarks1', function(){
+    var id = $(this).data('id');
+    $('#leadDetailModal').modal('hide');
+    $.get("{{URL::to('/')}}/agent1/leads/viewRemarks/"+id, function(data){
+
+      $('#leadRemarksModalBody').html(data);
+      $('#leadRemarksModal').modal('show');
+    });
+  });
+});
+</script>

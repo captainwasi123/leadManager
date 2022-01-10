@@ -12,7 +12,7 @@
                         <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-trending-up"></i><span class="hide-menu">Leads</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="{{route('agent1.leads.add')}}">Add Leads</a></li>
-                                <li><a href="{{route('agent1.leads.pending')}}">Pending Leads</a></li>
+                                <li><a href="{{route('agent1.leads.pending')}}">Fresh Leads</a></li>
                                 <li><a href="{{route('agent1.leads.import')}}">Import Leads</a></li>
                             </ul>
                         </li>

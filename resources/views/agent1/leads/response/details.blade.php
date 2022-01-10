@@ -216,5 +216,6 @@
         <div class="history-info">
           <p class="text-right p-one"><b>{{date('d-M-Y h:i a', strtotime($data->created_at))}}</b>
           <br>By: <b>{{@$data->user->name}}</b></p>
+          <a href="javascript:void(0)" class="btn btn-sm btn-success viewRemarks1" data-id="{{$data->id}}">{{count($data->remarks)}} <i class="fa fa-comment"></i></a>
         </div>
     </div>

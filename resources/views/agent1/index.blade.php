@@ -5,7 +5,8 @@
 <div class="container-fluid">
     <div class="row">
         <!-- Column -->
-         <div class="col-lg-4 col-md-6">
+         <div class="col-lg-3 col-md-6">
+             <a href="javascript:void(0)" class="totalDetails1" data-toggle="tooltip" title="" data-original-title="Lead Details">
             <div class="card card-main">
                 <div class="card-body main-panel">
                     <!-- Row -->
@@ -24,8 +25,32 @@
                     </div>
                 </div>
             </div>
+            </a>
         </div>
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-3 col-md-6">
+            <a href="javascript:void(0)" class="freshDetails1" data-toggle="tooltip" title="" data-original-title="Lead Details">
+            <div class="card card-main">
+                <div class="card-body main-panel">
+                    <!-- Row -->
+
+                    <div class="row">
+                        <div class="col-3 p-l-0 p-r-0" align="center">
+                            <img src="{{URL::to('/public/assets/')}}/images/icon.png" width="70px">
+                        </div>
+                        <div class="col-9">
+                            <div class="sec-1">
+                                <h6>Fresh Leads</h6>
+                                <h2>{{$total_fresh_leads}}</h2> 
+                            </div>
+                                                                   
+                        </div>                                    
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <a href="javascript:void(0)" class="pendingDetails1" data-toggle="tooltip" title="" data-original-title="Lead Details">
             <div class="card card-main">
                 <div class="card-body main-panel">
                     <!-- Row -->
@@ -35,7 +60,7 @@
                         </div>
                         <div class="col-9">
                             <div class="sec-1">
-                                <h6>Total Pending Leads</h6>
+                                <h6>Pending Leads</h6>
                                 <h2>{{$total_pending_leads}}</h2> 
                             </div>
                                                                    
@@ -43,8 +68,10 @@
                     </div>
                 </div>
             </div>
+            </a>
         </div>
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-3 col-md-6">
+            <a href="javascript:void(0)" class="markedDetails1" data-toggle="tooltip" title="" data-original-title="Lead Details">
             <div class="card card-main">
                 <div class="card-body main-panel">
                     <!-- Row -->
@@ -54,7 +81,7 @@
                         </div>
                         <div class="col-9">
                             <div class="sec-1">
-                                <h6>Total Marked Leads</h6>
+                                <h6>Marked Leads</h6>
                                 <h2>{{$total_marked_leads}}</h2> 
                             </div>
                                                                    
@@ -62,6 +89,7 @@
                     </div>
                 </div>
             </div>
+            </a>
         </div>             
     </div>
     <!-- Row -->
@@ -137,6 +165,36 @@
         $.get(host+"/agent1/leads/details/"+id, function(data, status){
             $('#leadDetailModalBody').html(data);
         });
+    });
+
+    $(document).on('click', '.totalDetails1', function(){
+         $.get("{{route('agent1.leads.widget.total')}}", function(data){
+
+            $('#leadDetailModalBody').html(data);
+             $('#leadDetailModal').modal('show');
+     });
+    });
+
+    $(document).on('click', '.pendingDetails1', function(){
+         $.get("{{route('agent1.leads.widget.pending')}}", function(data){
+
+            $('#leadDetailModalBody').html(data);
+             $('#leadDetailModal').modal('show');
+     });
+    });
+    $(document).on('click', '.markedDetails1', function(){
+         $.get("{{route('agent1.leads.widget.marked')}}", function(data){
+
+            $('#leadDetailModalBody').html(data);
+             $('#leadDetailModal').modal('show');
+     });
+    });
+     $(document).on('click', '.freshDetails1', function(){
+         $.get("{{route('agent1.leads.widget.fresh')}}", function(data){
+
+            $('#leadDetailModalBody').html(data);
+             $('#leadDetailModal').modal('show');
+     });
     });
     </script>
 

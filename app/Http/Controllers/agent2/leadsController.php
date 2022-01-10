@@ -10,23 +10,23 @@ use App\Models\leads\source;
 use App\Models\leads\remarks;
 use App\Models\leads\categories;
 use Carbon\Carbon;
-
+use App\Models\User;
 class leadsController extends Controller
 {
     function agent2pendingLead(){
-       $data['leads'] = leads::where('status', 1)->orderBy('created_at', 'desc')->paginate(25);
+        $data['leads'] = leads::where('status', 2)->where('assign_to', Auth::id())->orderBy('created_at', 'desc')->paginate (25);
         $data['total_leads'] = leads::count();
         return view('agent2.leads.pending')->with($data);
     }
 
     function markedLead(){
-        $data['leads'] = leads::where('status', 2)->where('marked_by', Auth::id())->orderBy('created_at', 'desc')->paginate(25);
+        $data['leads'] = leads::where('status', 3)->where('marked_by', Auth::id())->orderBy('created_at', 'desc')->paginate(25);
         return view('agent2.leads.marked')->with($data);
     }
     function markLead($id){
         $id = base64_decode($id);
         $data = leads::find($id);
-        $data->status = '2';
+        $data->status = '3';
         $data->marked_by = Auth::id();
         $data->save();
 
@@ -57,5 +57,17 @@ class leadsController extends Controller
         
         return redirect()->back()->with('success', 'New Remarks Added!');
 
+    }
+    function pendingWidget(){
+        $data['categories'] = categories::orderBy('name')->get();
+        return view('agent2.leads.response.pendingDetails2')->with($data);
+    }
+    function markedWidget(){
+       $data['categories'] = categories::orderBy('name')->get();
+        return view('agent2.leads.response.markedDetails2')->with($data);
+    }
+    function totalWidget(){
+        $data = categories::orderBy('name')->get();
+        return view('agent2.leads.response.totalDetails2', ['data' => $data]);
     }
 }

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\leads\leads;
 
 class User extends Authenticatable
 {
@@ -55,4 +56,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function pendingLeads(){
+        return $this->hasMany(leads::class, 'assign_to', 'id')->where('status', '2');
+    }
+
+    public function markedLeads(){
+        return $this->hasMany(leads::class, 'marked_by', 'id')->where('status', '3');
+    }
 }

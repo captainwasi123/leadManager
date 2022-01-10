@@ -48,6 +48,9 @@ class leads extends Model
     public function user(){
         return $this->belongsTo(User::class, 'created_by');
     }
+    public function assigned(){
+        return $this->belongsTo(User::class, 'assign_to');
+    }
     public function remarks(){
         return $this->hasMany(remarks::class, 'lead_id', 'id');
     }

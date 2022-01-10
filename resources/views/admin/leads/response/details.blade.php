@@ -1,6 +1,13 @@
 <div class="col-md-12">
       <div class="modal-body ">
         <h2 class="modal-title" id="exampleModalLabel">LEAD INFORMATION</h2>
+        <!-- <div class="row">
+            <div class="col-md-12">
+                <a href="javascript:void(0)" class="btn btn-sm btn-success viewRemarks" data-id="{{$data->id}}" id="pending-remarks-btn"><i class="fa fa-comment"></i> Remarks: {{count($data->remarks)}} </a>
+                <a href="javascript:void(0)" data-href="{{route('admin.leads.mark',base64_encode($data->id))}}" class="btn btn-sm btn-primary checkItem" id="pending-marked-btn"><i class="fa fa-check"></i> Marked</a>
+            </div>
+        </div> -->
+            
         <div class="row">
             <div class="col-md-12">
                 <div class="row cat-main">
@@ -91,7 +98,6 @@
                 </div>                                                
             </div>                                                         
         </div>
-
       </div>
     </div>
     <div class="col-md-12">
@@ -200,6 +206,14 @@
         <div class="history-info">
             <p class="text-right p-one"><b>{{date('d-M-Y h:i a', strtotime($data->created_at))}}</b>
               <br>By: <b>{{@$data->user->name}}</b></p>
+              <div class="row">
+                <div class="col-md-12">
+                <a href="javascript:void(0)" class="btn btn-sm btn-success viewRemarks" data-id="{{$data->id}}" id="pending-remarks-btn"><i class="fa fa-comment"></i> Remarks: {{count($data->remarks)}} </a>
+                @if($data->status == '2')
+                <a href="javascript:void(0)" data-href="{{route('admin.leads.mark',base64_encode($data->id))}}" class="btn btn-sm btn-primary checkItem" id="pending-marked-btn"><i class="fa fa-check"></i> Mark</a>
+                @endif
+                </div>
+              </div>
         </div>
       
     </div>

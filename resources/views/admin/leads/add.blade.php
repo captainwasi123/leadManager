@@ -118,7 +118,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group row">
                                         <div class="col-md-12">
-                                            <textarea class="form-control custom-select" name="description" placeholder="Description" rows="4"></textarea> 
+                                            <textarea class="form-control" name="description" placeholder="Description" rows="4"></textarea> 
                                         </div>
                                     </div>                                                
                                 </div>                                                                                      

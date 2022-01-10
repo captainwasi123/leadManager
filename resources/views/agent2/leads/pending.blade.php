@@ -29,7 +29,7 @@
                                     <th>Category</th>
                                     <th>Source</th>
                                     <th>Created at</th>
-                                    <th>User</th>
+                                    <!-- <th>User</th> -->
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -45,11 +45,11 @@
                                         <td>{{@$val->category->name}}</td>
                                         <td>{{@$val->source->source}}</td>
                                         <td>{{date('d-M-Y h:i a', strtotime($val->created_at))}}</td>
-                                        <td>{{@$val->user->name}}</td>
+                                        <!-- <td>{{@$val->user->name}}</td> -->
                                         <td>
-                                         <a href="javascript:void(0)" class="btn btn-sm btn-success viewRemarks2" data-id="{{$val->id}}">{{count($val->remarks)}} <i class="fa fa-comment"></i></a>   
+                                         <!-- <a href="javascript:void(0)" class="btn btn-sm btn-success viewRemarks2" data-id="{{$val->id}}">{{count($val->remarks)}} <i class="fa fa-comment"></i></a> -->   
                                         <a class="btn btn-sm btn-info viewDetailLeadagent2" data-toggle="tooltip" title="" data-original-title="Lead Details" data-id="{{base64_encode($val->id)}}"><i class="fa fa-eye"></i></a>
-                                         <a href="javascript:void(0)" data-href="{{route('agent2.leads.mark',base64_encode($val->id))}}" class="btn btn-sm btn-primary checkItem"><i class="fa fa-check"></i></a>   
+                                         <!-- <a href="javascript:void(0)" data-href="{{route('agent2.leads.mark',base64_encode($val->id))}}" class="btn btn-sm btn-primary checkItem"><i class="fa fa-check"></i></a> -->   
                                         </td>
                                     </tr>
                                 @endforeach
@@ -116,28 +116,6 @@
       }
     });
   });
-
-    $(document).ready(function(){
-
-  $(document).on('click', '.viewRemarks2', function(){
-    var id = $(this).data('id');
-    $.get("{{URL::to('/')}}/agent2/leads/viewRemarks/"+id, function(data){
-
-      $('#leadRemarksModalBody').html(data);
-      $('#leadRemarksModal').modal('show');
-    });
-  });
-});
-
- $(document).on('click', '.viewDetailLeadagent2', function(){
-        var id = $(this).data('id');
-        $('#leadDetailModal').modal('show');
-        $('#leadDetailModalBody').html('<img src="'+host+'/public/assets/images/loader.gif"/>');
-
-        $.get(host+"/agent2/leads/details/"+id, function(data, status){
-            $('#leadDetailModalBody').html(data);
-        });
-    });    
 
     </script>
 

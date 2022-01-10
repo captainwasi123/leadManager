@@ -13,6 +13,7 @@
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="{{route('agent2.leads.pending')}}">Pending Leads</a></li>
                                 <li><a href="{{route('agent2.leads.marked')}}">Marked Leads</a></li>
+                                <li><a href="{{route('agent2.leads.analytics')}}">Analytics</a></li>
                             </ul>
                         </li>
                     </ul>

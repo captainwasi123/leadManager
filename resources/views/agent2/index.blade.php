@@ -6,6 +6,7 @@
     <div class="row">
         <!-- Column -->
          <div class="col-lg-4 col-md-6">
+            <a href="javascript:void(0)" class="totalDetails2" data-toggle="tooltip" title="" data-original-title="Lead Details">
             <div class="card card-main">
                 <div class="card-body main-panel">
                     <!-- Row -->
@@ -24,8 +25,10 @@
                     </div>
                 </div>
             </div>
+            </a>
         </div>
         <div class="col-lg-4 col-md-6">
+            <a href="javascript:void(0)" class="pendingDetails2" data-toggle="tooltip" title="" data-original-title="Lead Details">
             <div class="card card-main">
                 <div class="card-body main-panel">
                     <!-- Row -->
@@ -35,7 +38,7 @@
                         </div>
                         <div class="col-9">
                             <div class="sec-1">
-                                <h6>Total Pending Leads</h6>
+                                <h6>Your Pending Leads</h6>
                                 <h2>{{$total_pending_leads}}</h2> 
                             </div>
                                                                    
@@ -43,8 +46,10 @@
                     </div>
                 </div>
             </div>
+            </a>
         </div>
         <div class="col-lg-4 col-md-6">
+            <a href="javascript:void(0)" class="markedDetails2" data-toggle="tooltip" title="" data-original-title="Lead Details">
             <div class="card card-main">
                 <div class="card-body main-panel">
                     <!-- Row -->
@@ -62,6 +67,7 @@
                     </div>
                 </div>
             </div>
+            </a>
         </div>             
     </div>
     <!-- Row -->
@@ -143,6 +149,30 @@
         $.get(host+"/agent2/leads/details/"+id, function(data, status){
             $('#leadDetailModalBody').html(data);
         });
+    });
+
+    $(document).on('click', '.pendingDetails2', function(){
+         $.get("{{route('agent2.leads.widget.pending')}}", function(data){
+
+            $('#leadDetailModalBody').html(data);
+             $('#leadDetailModal').modal('show');
+     });
+    });
+
+    $(document).on('click', '.markedDetails2', function(){
+         $.get("{{route('agent2.leads.widget.marked')}}", function(data){
+
+            $('#leadDetailModalBody').html(data);
+             $('#leadDetailModal').modal('show');
+     });
+    });
+
+    $(document).on('click', '.totalDetails2', function(){
+         $.get("{{route('agent2.leads.widget.total')}}", function(data){
+
+            $('#leadDetailModalBody').html(data);
+             $('#leadDetailModal').modal('show');
+     });
     });
     </script>
 
