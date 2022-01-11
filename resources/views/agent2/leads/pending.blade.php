@@ -107,15 +107,14 @@
         });
         
     });
-    $(document).ready(function(){
 
-    $('.checkItem').click(function(){
+     $(document).on('click', '.checkItem', function(){
       var link = $(this).data('href');
       if(confirm('Are you sure want to check this Record?')){
         window.location.href = link;
       }
+        
     });
-  });
 
     </script>
 

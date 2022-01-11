@@ -1,7 +1,7 @@
 <header class="topbar">
     <nav class="navbar top-navbar navbar-expand-md navbar-light">
         <div class="navbar-header">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="{{URL::to('/agent2')}}">
                 <!-- Logo icon -->
                 <b>
                     <img src="{{URL::to('/public/assets/')}}/images/logo-icon.png" alt="homepage" class="dark-logo">

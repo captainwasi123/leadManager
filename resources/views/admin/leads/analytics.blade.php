@@ -81,12 +81,12 @@
             <div class="legend_div">
                     <ul>
                         <li>
-                            <div class="" style="background-color: #67C7EB"></div>
-                            <p>Assigned Lead</p>
-                        </li>
-                        <li>
                             <div class="" style="background-color: #cf9fff"></div>
                             <p>Fresh Lead</p>
+                        </li>
+                        <li>
+                            <div class="" style="background-color: #67C7EB"></div>
+                            <p>Assigned Lead</p>
                         </li>
                         <li>
                             <div class="" style="background-color: #B97D10"></div>

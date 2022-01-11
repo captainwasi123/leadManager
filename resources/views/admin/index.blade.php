@@ -12,7 +12,7 @@
 
                     <div class="row">
                         <div class="col-3 p-l-0 p-r-0" align="center">
-                            <img src="{{URL::to('/public/assets/')}}/images/icon.png" width="70px">
+                                <img src="{{URL::to('/public/assets/')}}/images/icon.png" width="70px">
                         </div>
                         <div class="col-9">
                             <div class="sec-1">
