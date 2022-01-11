@@ -141,6 +141,14 @@
         });
     });
 
+     $(document).on('click', '.checkItem', function(){
+      var link = $(this).data('href');
+      if(confirm('Are you sure want to check this Record?')){
+        window.location.href = link;
+      }
+        
+    });
+
     $(document).on('click', '.viewDetailLeadagent', function(){
         var id = $(this).data('id');
         $('#leadDetailModal').modal('show');
@@ -174,6 +182,7 @@
              $('#leadDetailModal').modal('show');
      });
     });
+
     </script>
 
 @endsection

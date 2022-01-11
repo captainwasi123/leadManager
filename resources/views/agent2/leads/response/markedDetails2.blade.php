@@ -7,7 +7,7 @@
                 <tr>
                     <th>Sr.No</th>
                     <th>Category</th>
-                    <th>Pending Leads</th>
+                    <th>Marked Leads</th>
                 </tr>
             </thead>
                 <tbody>
