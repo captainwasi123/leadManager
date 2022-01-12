@@ -24,7 +24,7 @@
                         <li class="nav-small-cap">Settings</li>
                         <li> <a class="waves-effect waves-dark"  href="{{route('admin.setting.categories')}}" aria-expanded="false"><i class="mdi mdi-apps"></i><span class="hide-menu">Categories</span></a> </li>
 
-                        <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span class="hide-menu">Users</span></a>
+                        <li><a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span class="hide-menu">Users</span></a>
                              <ul aria-expanded="false" class="collapse">
                                 <li><a href="{{route('admin.users.addnew')}}">Add New</a></li>
                                 <li><a href="{{route('admin.users.alluser')}}">All User</a></li>

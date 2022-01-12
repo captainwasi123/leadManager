@@ -79,8 +79,8 @@
                                 <select class="form-control custom-select" name="status" value="{{@$search['status']}}">
                                     <option value="">Status *</option>
                                     
-                                        <option value="1" {{!empty($search['status']) && $search['status'] == '1' ? 'selected' : ''}}>Pending</option>
-                                        <option value="2" {{!empty($search['status']) && $search['status'] == '2' ? 'selected' : ''}}>Marked</option>
+                                        <option value="1" {{!empty($search['status']) && $search['status'] == '2' ? 'selected' : ''}}>Pending</option>
+                                        <option value="3" {{!empty($search['status']) && $search['status'] == '3' ? 'selected' : ''}}>Marked</option>
 
                                     
                                 </select>
@@ -130,9 +130,9 @@
                                         <td>{{@$val->category->name}}</td>
                                         <td>{{@$val->source->source}}</td>
                                         <td>
-                                            @if($val->status == '1')
+                                            @if($val->status == '2')
                                                 <span class="badge badge-primary">Pending</span>
-                                            @elseif($val->status == '2')
+                                            @elseif($val->status == '3')
                                                 <span class="badge badge-info">Marked</span>
                                             @endif
                                         </td>
@@ -140,11 +140,11 @@
                                         <td>{{@$val->user->name}}</td>
                                         <td class="text-right">
                                             <a href="javascript:void(0)" class="btn btn-sm btn-success viewRemarks" data-id="{{$val->id}}">{{count($val->remarks)}} <i class="fa fa-comment"></i></a>
-                                            <a  href="{{route('admin.settings.categories.edit',base64_encode($val->id))}}" class="btn btn-sm btn-info" data-toggle="tooltip" title="" data-original-title="Edit Catogery" data-id="{{base64_encode($val->id)}}"><i class="fa fa-edit"></i></a>
+                                            <!-- <a  href="{{route('admin.settings.categories.edit',base64_encode($val->id))}}" class="btn btn-sm btn-info" data-toggle="tooltip" title="" data-original-title="Edit Catogery" data-id="{{base64_encode($val->id)}}"><i class="fa fa-edit"></i></a> -->
                                             <!-- <a href="javascript:void(0)" data-href="{{route('admin.settings.categories.delete',base64_encode($val->id))}}" class="btn btn-sm btn-danger deleteItem" data-toggle="tooltip" title="" data-original-title="Delete Catogery" data-id="{{base64_encode($val->id)}}"><i class="fa fa-trash"></i></a> -->
-                                            @if($val->status == 1)
+                                            <!-- @if($val->status == 2)
                                             <a href="javascript:void(0)" data-href="{{route('admin.leads.mark',base64_encode($val->id))}}" class="btn btn-sm btn-primary checkItem"><i class="fa fa-check"></i></a>
-                                            @endif  
+                                            @endif -->  
                                         </td>
                                     </tr>
                                 @endforeach  
