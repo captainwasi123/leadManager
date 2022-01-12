@@ -33,10 +33,10 @@ class leadsController extends Controller
         return redirect()->back()->with('success', 'Lead Updated.');
     }
 
-    function agent1pendingLead(){
+    function agent1freshLead(){
         $data['leads'] = leads::where('status', 1)->where('created_by', Auth::id())->orderBy('created_at', 'desc')->paginate(25);
         $data['total_leads'] = leads::count();
-        return view('agent1.leads.pending')->with($data);
+        return view('agent1.leads.fresh')->with($data);
     }
 
     function details($id){

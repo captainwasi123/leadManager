@@ -93,7 +93,7 @@ Route::get('logout', 'authController@logout')->name('logout');
             Route::get('/details/{id}', 'leadsController@details');
             Route::get('add', 'leadsController@addLead')->name('agent1.leads.add');
             Route::post('/add', 'leadsController@addleadSubmit');
-            Route::get('pending', 'leadsController@agent1pendingLead')->name('agent1.leads.pending');
+            Route::get('fresh', 'leadsController@agent1freshLead')->name('agent1.leads.fresh');
             Route::get('/viewRemarks/{id}', 'leadsController@viewRemarks');
             Route::post('remarks', 'leadsController@viewRemarksSubmit')->name('agent1.leads.response.remarks');
             Route::get('import', 'leadsController@importLead')->name('agent1.leads.import');
