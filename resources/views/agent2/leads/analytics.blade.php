@@ -27,6 +27,10 @@
                         <div class="" style="background-color: #FBCA03"></div>
                         <p>Marked Lead</p>
                     </li>
+                    <li>
+                        <div class="" style="background-color: #FF6700"></div>
+                        <p>Follow-Up</p>
+                    </li>
                 </ul>
              </div>
         </div>
@@ -89,6 +93,20 @@
                 data: [
                     @foreach($categories as $val)
                         {{count($val->agent2markedLeads)}},
+                    @endforeach
+                ]
+            },
+            {
+                label: "Follow-Up",
+                fillColor: "#FF6700",
+                strokeColor: "#FF6700",
+                pointColor: "#FF6700",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "#55ce63",
+                data: [
+                    @foreach($categories as $val)
+                        {{count($val->agent2followupLeads)}},
                     @endforeach
                 ]
             }

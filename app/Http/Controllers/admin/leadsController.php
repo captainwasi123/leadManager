@@ -187,4 +187,36 @@ class leadsController extends Controller
             return redirect()->back()->with('success', 'Total: '.Session::get('format').' rows imported sucessfuly!');
         }
     }
+
+    function followView($id){
+        $data['id'] = $id;
+        $data['lead'] = leads::find($id);
+        // $data['followup_date'];
+        return view('admin.leads.response.followupDetails')->with($data);
+    }
+
+    function followupDetailsSubmit(Request $request){
+        $data = $request->all();
+
+        $r = leads::find($data['id']);
+        $r->followup_remarks = $data['followup_remarks'];
+        $r->followup_date = $data['followup_date'];
+        $r->status = '4';
+        $r->save();
+        
+        return redirect()->back()->with('success', 'New Follow-up Remarks Added!');
+
+    }
+
+    function upcomingView(){
+        $data['leads'] = leads::where('status', 4)->where('followup_date', '>=', date('Y-m-d'))->orderBy('created_at', 'desc')->paginate (25);
+        $data['total_leads'] = leads::count();
+        return view('admin.leads.upcoming')->with($data);
+    }
+
+    function missedView(){
+        $data['leads'] = leads::where('status', 4)->where('followup_date', '<', date('Y-m-d'))->orderBy('created_at', 'desc')->paginate (25);
+        $data['total_leads'] = leads::count();
+        return view('admin.leads.missed')->with($data);
+    }
 }

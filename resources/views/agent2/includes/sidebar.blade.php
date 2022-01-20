@@ -13,6 +13,13 @@
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="{{route('agent2.leads.pending')}}">Pending Leads</a></li>
                                 <li><a href="{{route('agent2.leads.marked')}}">Marked Leads</a></li>
+                        <li> 
+                                <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><span>Follow-Up</span></a>
+                                <ul aria-expanded="false" class="collapse">
+                                    <li><a href="{{route('agent2.leads.followup.upcoming')}}">Upcoming</a></li>
+                                    <li><a href="{{route('agent2.leads.followup.missed')}}">Missed</a></li>
+                                </ul>
+                        </li>
                                 <li><a href="{{route('agent2.leads.analytics')}}">Analytics</a></li>
                             </ul>
                         </li>

@@ -35,15 +35,7 @@
 
     
 
-    <div class="modal fade" id="leadDetailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <div class="row" id="leadDetailModalBody">
-                </div>
-            </div>
-        </div>
-    </div>
+    @include('agent2.includes.modal')
 
     @include('agent2.includes.script')
     <!-- ============================================================== -->

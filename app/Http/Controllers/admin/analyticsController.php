@@ -18,6 +18,7 @@ class analyticsController extends Controller
         $data['total_pending_leads'] = leads::where('status', 1)->count();
         $data['total_marked_leads'] = leads::where('status', 2)->count();
         $data['categories'] = categories::orderBy('name')->get();
+        $data['followup'] = leads::where('status', 4)->count();
         return view('admin.leads.analytics')->with($data);
     }   
 }

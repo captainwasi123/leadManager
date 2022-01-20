@@ -56,6 +56,13 @@ Route::get('logout', 'authController@logout')->name('logout');
             Route::prefix('analytics')->group(function(){
                 Route::get('analytics', 'analyticsController@analytics')->name('admin.leads.analytics');
             });
+
+            Route::prefix('followup')->group(function(){
+                Route::get('upcoming', 'leadsController@upcomingView')->name('admin.leads.followup.upcoming');
+                Route::get('missed', 'leadsController@missedView')->name('admin.leads.followup.missed');
+                Route::get('/followView/{id}', 'leadsController@followView');
+                Route::post('followupDetailsSubmit', 'leadsController@followupDetailsSubmit')->name('admin.leads.response.followupDetails');
+            });
         });
 
         //Categories
@@ -135,6 +142,13 @@ Route::get('logout', 'authController@logout')->name('logout');
 
             Route::prefix('analytics')->group(function(){
                 Route::get('analytics', 'analyticsController@analytics')->name('agent2.leads.analytics');
+            });
+
+            Route::prefix('followup')->group(function(){
+                Route::get('upcoming', 'followupController@upcomingView')->name('agent2.leads.followup.upcoming');
+                Route::get('missed', 'followupController@missedView')->name('agent2.leads.followup.missed');
+                Route::get('/followView/{id}', 'followupController@followView');
+                Route::post('followupDetailsSubmit', 'followupController@followupDetailsSubmit')->name('agent2.leads.response.followupDetails');
             });
 
 

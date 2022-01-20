@@ -48,7 +48,17 @@
         $.get(host+"/admin/leads/details/"+id, function(data, status){
             $('#leadDetailModalBody').html(data);
         });
-    });    
+    });
+
+    $(document).on('click', '.followupagent', function(){
+    var id = $(this).data('id');
+    $('#leadDetailModal').modal('hide');
+    $.get("{{URL::to('/')}}/admin/leads/followup/followView/"+id, function(data){
+
+      $('#followupModalBody').html(data);
+      $('#followupModal').modal('show');
+    });
+  });    
 
 });
 </script>

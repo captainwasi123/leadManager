@@ -62,6 +62,12 @@ class User extends Authenticatable
     }
 
     public function markedLeads(){
-        return $this->hasMany(leads::class, 'marked_by', 'id')->where('status', '3');
+        return $this->hasMany(leads::class, 'assign_to', 'id')->where('status', '3');
     }
+
+    public function followupLeads(){
+        return $this->hasMany(leads::class, 'assign_to', 'id')->where('status', '4');
+    }
+
+    
 }

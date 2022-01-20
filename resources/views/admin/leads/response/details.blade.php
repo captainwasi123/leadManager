@@ -209,8 +209,9 @@
               <div class="row">
                 <div class="col-md-12">
                 <a href="javascript:void(0)" class="btn btn-sm btn-success viewRemarks" data-id="{{$data->id}}" id="pending-remarks-btn"><i class="fa fa-comment"></i> Remarks: {{count($data->remarks)}} </a>
-                @if($data->status == '2')
+                @if($data->status == '2' || $data->status == '4')
                 <a href="javascript:void(0)" data-href="{{route('admin.leads.mark',base64_encode($data->id))}}" class="btn btn-sm btn-primary checkItem" id="pending-marked-btn"><i class="fa fa-check"></i> Mark</a>
+                <a href="javascript:void(0)" class="btn btn-sm btn-info followupagent" data-id="{{$data->id}}"><i class="mdi mdi-twitch"></i> Follow-up</a>
                 @endif
                 </div>
               </div>

@@ -109,19 +109,19 @@ a.relative.inline-flex.items-center.px-2.py-2.-ml-px.text-sm.font-medium.text-gr
 }
 
 #pending-marked-btn{
-    float: left;
-    margin-bottom: 10px;
+   /* float: left;
+    margin-bottom: 10px;*/
 }
 #pending-remarks-btn{
     float: left;
-    margin-bottom: 10px;
+    /*margin-bottom: 10px;*/
     margin-right: 5px;
 } 
 
 .legend_div ul li{
     display: inline-block;
     vertical-align: middle;
-    padding-right: 50px;
+    padding-right: 40px;
 }
 .legend_div ul li div {
     display: inline-block;
@@ -143,6 +143,7 @@ a.relative.inline-flex.items-center.px-2.py-2.-ml-px.text-sm.font-medium.text-gr
 
 .legend_div ul{
         margin-bottom: 0rem;
+        padding: 0px;
 }
 
 .user-analytics, #user-analytics{
@@ -157,4 +158,16 @@ a.relative.inline-flex.items-center.px-2.py-2.-ml-px.text-sm.font-medium.text-gr
 #chart3 {
     position: absolute;
     bottom: 120px;
+}
+.mail-contnet label {
+    position: absolute;
+    bottom: -7px;
+    right: 9px;
+}
+
+.mail-contnet {
+    position: relative;
+}
+.upcommingFollowTray {
+    display: none;
 }

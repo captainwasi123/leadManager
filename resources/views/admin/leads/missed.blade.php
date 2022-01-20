@@ -1,4 +1,4 @@
-@extends('agent2.includes.master')
+@extends('admin.includes.master')
 @section('title', 'Leads')
 @section('content')
 
@@ -14,13 +14,14 @@
             <div class="card">
 
                 <div class="card-body">
-                    <h3 class="add-lead-head">Pending Leads</h3>
+                    <h3 class="add-lead-head">Missed</h3>
                     <div class="table-responsive m-t-40">                                  
                    
                         <table class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
                                     <th>Sr.No</th>
+                                    <th>Followup Date</th>   
                                     <th>Full Name</th>
                                     <th>Designation</th>
                                     <th>City</th>
@@ -28,8 +29,7 @@
                                     <th>Mobile No</th>
                                     <th>Category</th>
                                     <th>Source</th>
-                                    <th>Created at</th>
-                                    <!-- <th>User</th> -->
+                                    <th>Created at</th>              
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -37,6 +37,7 @@
                                 @foreach($leads as $key=> $val)
                                     <tr>
                                         <td>{{++$key}}</td>
+                                        <td>{{date('d-M-Y', strtotime($val->followup_date))}}</td>
                                         <td>{{$val->name}}</td>
                                         <td>{{$val->designation}}</td>
                                         <td>{{$val->city}}</td>
@@ -45,10 +46,9 @@
                                         <td>{{@$val->category->name}}</td>
                                         <td>{{@$val->source->source}}</td>
                                         <td>{{date('d-M-Y h:i a', strtotime($val->created_at))}}</td>
-                                        <!-- <td>{{@$val->user->name}}</td> -->
                                         <td>
                                          <!-- <a href="javascript:void(0)" class="btn btn-sm btn-success viewRemarks2" data-id="{{$val->id}}">{{count($val->remarks)}} <i class="fa fa-comment"></i></a> -->   
-                                        <a class="btn btn-sm btn-info viewDetailLeadagent2" data-toggle="tooltip" title="" data-original-title="Lead Details" data-id="{{base64_encode($val->id)}}"><i class="fa fa-eye"></i></a>
+                                        <a class="btn btn-sm btn-info viewDetailLead" data-toggle="tooltip" title="" data-original-title="Lead Details" data-id="{{base64_encode($val->id)}}"><i class="fa fa-eye"></i></a>
                                          <!-- <a href="javascript:void(0)" data-href="{{route('agent2.leads.mark',base64_encode($val->id))}}" class="btn btn-sm btn-primary checkItem"><i class="fa fa-check"></i></a> -->   
                                         </td>
                                     </tr>

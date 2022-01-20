@@ -29,6 +29,10 @@
                             <div class="" style="background-color: #FBCA03"></div>
                             <p>Marked Lead</p>
                         </li>
+                        <li>
+                            <div class="" style="background-color: #FF6700"></div>
+                            <p>Follow-Up</p>
+                        </li>
                     </ul>
                 </div>
         	</div>
@@ -57,6 +61,10 @@
                     <li>
                         <div class="" style="background-color: #FBCA03"></div>
                         <p>Marked Lead</p>
+                    </li>
+                    <li>
+                        <div class="" style="background-color: #FF6700"></div>
+                        <p>Follow-Up</p>
                     </li>
                 </ul>
             </div>
@@ -95,6 +103,10 @@
                         <li>
                             <div class="" style="background-color: #FBCA03"></div>
                             <p>Marked Lead</p>
+                        </li>
+                        <li>
+                            <div class="" style="background-color: #FF6700"></div>
+                            <p>Follow-Up</p>
                         </li>
                     </ul>
                 </div>
@@ -163,6 +175,18 @@
 		        	@endforeach
 		        	]
             },
+            {
+                label: "Follow-Up",
+                fillColor: "#FF6700",
+                strokeColor: "#FF6700",
+                highlightFill: "#FF6700",
+                highlightStroke: "#FF6700",
+                data: [
+                    @foreach($users as $val)
+                        "{{count($val->followupLeads)}}",
+                    @endforeach
+                    ]
+            },
 
         ]
 
@@ -207,6 +231,12 @@
             color: "#FBCA03",
             highlight: "#FBCA03",
             label: "Marked Leads"
+        },
+        {
+            value: {{$followup}},
+            color: "#FF6700",
+            highlight: "#FF6700",
+            label: "Follow-Up"
         },
     ];
     
@@ -288,6 +318,20 @@
                 data: [
                     @foreach($categories as $val)
                         {{count($val->markedLeads)}},
+                    @endforeach
+                ]
+            },
+            {
+                label: "Follow-Up",
+                fillColor: "#FF6700",
+                strokeColor: "#FF6700",
+                pointColor: "#FF6700",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(97,100,193,1)",
+                data: [
+                    @foreach($categories as $val)
+                        {{count($val->followupLeads)}},
                     @endforeach
                 ]
             }

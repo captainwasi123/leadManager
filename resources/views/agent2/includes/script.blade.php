@@ -53,7 +53,18 @@
         $.get(host+"/agent2/leads/details/"+id, function(data, status){
             $('#leadDetailModalBody').html(data);
         });
-    });    
+    });
+
+ $(document).on('click', '.followupagent2', function(){
+    var id = $(this).data('id');
+    $('#leadDetailModal').modal('hide');
+    $.get("{{URL::to('/')}}/agent2/leads/followup/followView/"+id, function(data){
+
+      $('#followupModalBody').html(data);
+      $('#followupModal').modal('show');
+    });
+  });
+
 
 });
 </script>
