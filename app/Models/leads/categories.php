@@ -41,7 +41,7 @@ class categories extends Model
     }
 
     public function agent2markedLeads(){
-        return $this->hasMany(leads::class, 'category_id', 'id')->where('status', '3')->where('assign_to', Auth::id());
+        return $this->hasMany(leads::class, 'category_id', 'id')->where('status', '3')->where('marked_by', Auth::id());
     }
 
     public function agent2followupLeads(){
