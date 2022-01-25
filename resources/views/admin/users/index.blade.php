@@ -17,6 +17,7 @@
                             <a href="{{route('admin.users.add')}}" class="btn btn-info waves-effect waves-light add-lead pull-right">ADD USER</a>
                         </div>
                     </div>
+      
                     <div class="table-responsive m-t-40">
                         <table id="datatable" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
